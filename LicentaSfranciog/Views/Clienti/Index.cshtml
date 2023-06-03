@@ -1,0 +1,71 @@
+﻿@model IEnumerable<LicentaSfranciog.Models.Client>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Clienţii Cabinetului de Avocatura</h1>
+
+<p>    
+    <a class="btn btn-primary" asp-action="Create">Adaugare Client Nou</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Tip)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nume)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Prenume)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CNPorCUI)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Telefon)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Adresa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tip)
+                </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nume)
+            </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Prenume)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CNPorCUI)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Telefon)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Adresa)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+            <td>
+                <a class="btn btn-secondary" asp-action="Edit" asp-route-id="@item.Id">Editare</a> |
+                <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id">Profil</a> |
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Ştergere</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
