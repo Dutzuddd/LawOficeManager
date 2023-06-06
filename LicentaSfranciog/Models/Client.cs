@@ -22,5 +22,30 @@ namespace LicentaSfranciog.Models
         [Required]
         public string Adresa { get; set; }
         public string Email { get; set; }
+
+        public Client(IFormCollection form)
+        {
+            Id = int.Parse(form["Id"]);
+            Tip = form["Tip"];
+            Nume = form["Nume"];
+            Prenume = form["Prenume"];
+            CNPorCUI = form["CNPorCUI"];
+            Telefon = form["Telefon"];
+            Adresa = form["Adresa"];
+            Email = form["Email"];
+        }
+        public Client() { }
+        public void UpdateClient(IFormCollection form)
+        {
+            Id = int.Parse(form["Id"]);
+            Tip = form["Tip"];
+            Nume = form["Nume"];
+            Prenume = form["Prenume"];
+            CNPorCUI = form["CNPorCUI"];
+            Telefon = form["Telefon"];
+            Adresa = form["Adresa"];
+            Email = form["Email"];
+        }
+        
     }
 }

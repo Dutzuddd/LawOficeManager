@@ -2,6 +2,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using LicentaSfranciog.Areas.Identity.Data;
 using Microsoft.Extensions.DependencyInjection;
+using LicentaSfranciog.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("ApplicationDbContext") ?? throw new InvalidOperationException("Connection string 'ApplicationDbContext' not found.")));
@@ -12,6 +14,8 @@ builder.Services.AddDbContext<UserDbContext>(options =>
 
 builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<UserDbContext>();
+
+builder.Services.AddScoped<IDAL, DAL>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

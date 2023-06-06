@@ -7,6 +7,11 @@
 
 <h1>Clienţii Cabinetului de Avocatura</h1>
 
+@if(ViewData["Alert"] != null)
+{
+    <h3>@ViewData["Alert"]</h3>
+}
+
 <p>    
     <a class="btn btn-primary" asp-action="Create">Adaugare Client Nou</a>
 </p>

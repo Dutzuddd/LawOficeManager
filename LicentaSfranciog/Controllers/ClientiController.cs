@@ -6,42 +6,46 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using LicentaSfranciog.Models;
+using LicentaSfranciog.Data;
+using Microsoft.CodeAnalysis;
 
 namespace LicentaSfranciog.Controllers
 {
     public class ClientiController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly IDAL _idal;
 
-        public ClientiController(ApplicationDbContext context)
+        public ClientiController(IDAL idal)
         {
-            _context = context;
+            _idal = idal;
         }
 
         // GET: Clienti
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-              return _context.Client != null ? 
-                          View(await _context.Client.ToListAsync()) :
-                          Problem("Entity set 'ApplicationDbContext.Client'  is null.");
+            if (TempData["Alert"] != null)
+            {
+                ViewData["Alert"] = TempData["Alert"];
+            }
+            return View(_idal.GetClients());
         }
 
         // GET: Clienti/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public IActionResult Details(int? id)
         {
-            if (id == null || _context.Client == null)
+            if (id == null)
             {
                 return NotFound();
             }
 
-            var client = await _context.Client
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (client == null)
+            var @client = _idal.GetClient((int)id);
+            if (@client == null)
             {
                 return NotFound();
             }
 
-            return View(client);
+            return View(@client);
         }
 
         // GET: Clienti/Create
@@ -59,27 +63,35 @@ namespace LicentaSfranciog.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Add(client);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                try
+                {
+                    _idal.CreateClient(client);
+                    TempData["Alert"] = "Succes! S-a creat clientul: " + client.Nume;
+                    return RedirectToAction(nameof(Index));
+                }
+                catch (Exception ex)
+                {
+                    ViewData["Alert"] = "An error occurred: " + ex.Message;
+                    return View(client);
+                }
             }
             return View(client);
         }
 
         // GET: Clienti/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public IActionResult Edit(int? id)
         {
-            if (id == null || _context.Client == null)
+            if (id == null )
             {
                 return NotFound();
             }
 
-            var client = await _context.Client.FindAsync(id);
-            if (client == null)
+            var @client = _idal.GetClient((int)id);
+            if (@client == null)
             {
                 return NotFound();
             }
-            return View(client);
+            return View(@client);
         }
 
         // POST: Clienti/Edit/5
@@ -87,9 +99,9 @@ namespace LicentaSfranciog.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Tip,Nume,Prenume,CNPorCUI,Telefon,Adresa,Email")] Client client)
+        public async Task<IActionResult> Edit(int id, IFormCollection form)
         {
-            if (id != client.Id)
+            if (id != int.Parse(form["Id"]))
             {
                 return NotFound();
             }
@@ -98,12 +110,13 @@ namespace LicentaSfranciog.Controllers
             {
                 try
                 {
-                    _context.Update(client);
-                    await _context.SaveChangesAsync();
+                    _idal.UpdateClient(form);
+                    TempData["Alert"] = "Succes! S-au modificat datele pentru clientul: " + form["Nume"];
+                    return RedirectToAction(nameof(Index));
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ClientExists(client.Id))
+                    if (!ClientExists(int.Parse(form["Id"])))
                     {
                         return NotFound();
                     }
@@ -114,43 +127,33 @@ namespace LicentaSfranciog.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(client);
+            return View(form);
         }
 
         // GET: Clienti/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        public IActionResult Delete(int? id)
         {
-            if (id == null || _context.Client == null)
+            if (id == null )
             {
                 return NotFound();
             }
 
-            var client = await _context.Client
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (client == null)
+            var @client = _idal.GetClient((int)id);
+            if (@client == null)
             {
                 return NotFound();
             }
 
-            return View(client);
+            return View(@client);
         }
 
         // POST: Clienti/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public ActionResult DeleteConfirmed(int id)
         {
-            if (_context.Client == null)
-            {
-                return Problem("Entity set 'ApplicationDbContext.Client'  is null.");
-            }
-            var client = await _context.Client.FindAsync(id);
-            if (client != null)
-            {
-                _context.Client.Remove(client);
-            }
-            
-            await _context.SaveChangesAsync();
+            _idal.DeleteClient(id);
+            TempData["Alert"] = "Succes! A fost sters un client!";
             return RedirectToAction(nameof(Index));
         }
 

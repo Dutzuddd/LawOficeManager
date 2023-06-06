@@ -7,10 +7,27 @@ using LicentaSfranciog.Models;
 
     public class ApplicationDbContext : DbContext
     {
-        public ApplicationDbContext (DbContextOptions<ApplicationDbContext> options)
+    public ApplicationDbContext()
+    {
+    }
+
+    public ApplicationDbContext (DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
         }
 
-        public DbSet<LicentaSfranciog.Models.Client> Client { get; set; } = default!;
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        if (!optionsBuilder.IsConfigured)
+        {
+            IConfigurationRoot configuration = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json")
+                .Build();
+            var connectionString = configuration.GetConnectionString("ApplicationDbContext");
+            optionsBuilder.UseSqlServer(connectionString);
+        }
+    }
+
+    public DbSet<LicentaSfranciog.Models.Client> Client { get; set; } = default!;
     }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "UsSeNx3qAcbHOZKvi0h+vw0Uc4FT0C3h1YmT9YGFnu/EM71YNvCh+fL5ucMV/uCuYrLZF1PEGFVlOgz5inMNzw==",
+  "dgSpecHash": "teHl5mn/OOC43OcdEjcIyFBi2c0mgGvNCu127TSKJrPjzrpb1T1bqUZdA6NiLrfZXU88TmltneC8h1fMV0dx9Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\vlads\\Desktop\\Vlad\\Scoala\\Licenta\\Aplicatie si Teste\\clientApp\\LicentaSfranciog\\LicentaSfranciog\\LicentaSfranciog.csproj",
+  "projectFilePath": "C:\\Users\\vlads\\Desktop\\workigOn\\c#\\LicentaSfranciog\\LicentaSfranciog\\LicentaSfranciog.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\vlads\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\vlads\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
