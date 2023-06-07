@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Details</h1>
+<h1>Profil</h1>
 
 <div>
     <h4>Proces</h4>
@@ -47,9 +47,15 @@
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.OreLucrate)
         </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Client)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Client.Nume)
+        </dd>
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a class="btn btn-primary" asp-action="Editare" asp-route-id="@Model?.Id">Edit</a> |
+    <a class="btn btn-outline-success" asp-action="Index">Back to List</a>
 </div>

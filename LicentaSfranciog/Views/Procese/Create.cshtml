@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Create</h1>
+<h1>Creare Proces Nou</h1>
 
 <h4>Proces</h4>
 <hr />
@@ -47,17 +47,16 @@
                 <label>Client</label>
                 @Html.DropDownList("Client",Model.Client , "Selectează un client", new {@class="form-control"})
             </div>
-
+            <br />
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Salvare" class="btn btn-primary" />
+                <a class="btn btn-outline-success" asp-action="Index">Inapoi la Clienţi</a>
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
