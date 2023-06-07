@@ -18,6 +18,7 @@ using LicentaSfranciog.Models;
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
+        optionsBuilder.UseLazyLoadingProxies();
         if (!optionsBuilder.IsConfigured)
         {
             IConfigurationRoot configuration = new ConfigurationBuilder()
@@ -30,4 +31,6 @@ using LicentaSfranciog.Models;
     }
 
     public DbSet<LicentaSfranciog.Models.Client> Client { get; set; } = default!;
+
+    public DbSet<LicentaSfranciog.Models.Proces>? Proces { get; set; }
     }

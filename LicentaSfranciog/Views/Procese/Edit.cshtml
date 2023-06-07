@@ -1,0 +1,82 @@
+﻿@model LicentaSfranciog.Models.ViewModels.ProcesViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>Proces</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Proces.Id" />
+            <div class="form-group">
+                <label asp-for="Proces.Nume" class="control-label"></label>
+                <input asp-for="Proces.Nume" class="form-control" />
+                <span asp-validation-for="Proces.Nume" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Proces.Tip" class="control-label"></label>
+                <input asp-for="Proces.Tip" class="form-control" />
+                <span asp-validation-for="Proces.Tip" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Proces.Partile" class="control-label"></label>
+                <input asp-for="Proces.Partile" class="form-control" />
+                <span asp-validation-for="Proces.Partile" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Proces.Obiect" class="control-label"></label>
+                <input asp-for="Proces.Obiect" class="form-control" />
+                <span asp-validation-for="Proces.Obiect" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Proces.Solutie" class="control-label"></label>
+                <input asp-for="Proces.Solutie" class="form-control" />
+                <span asp-validation-for="Proces.Solutie" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Proces.OreLucrate" class="control-label"></label>
+                <input asp-for="Proces.OreLucrate" class="form-control" />
+                <span asp-validation-for="Proces.OreLucrate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label>Client</label>
+                @Html.DropDownList("Client",Model.Client , "Selectează un client", new {@class="form-control"})
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    function SetSelectedClient(Client) {
+        var clients = document.getElementById('Client'), cl, i;
+
+        for(i = 0; i < clients.length; i++ ){
+            cl = clients[i];
+            if (cl.innerText == Client) {
+                cl.selected = "true";
+            }
+        }
+    }
+
+    var procesclient = '@Html.Raw(Model.NumeClient)';
+
+    document.addEventListener('DOMContentLoaded', function () {
+        SetSelectedClient(procesclient);
+    });
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

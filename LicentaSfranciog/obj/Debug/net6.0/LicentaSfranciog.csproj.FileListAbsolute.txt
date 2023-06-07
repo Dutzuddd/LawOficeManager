@@ -835,3 +835,5 @@ C:\Users\vlads\Desktop\workigOn\c#\LicentaSfranciog\LicentaSfranciog\obj\Debug\n
 C:\Users\vlads\Desktop\workigOn\c#\LicentaSfranciog\LicentaSfranciog\obj\Debug\net6.0\LicentaSfranciog.pdb
 C:\Users\vlads\Desktop\workigOn\c#\LicentaSfranciog\LicentaSfranciog\obj\Debug\net6.0\LicentaSfranciog.genruntimeconfig.cache
 C:\Users\vlads\Desktop\workigOn\c#\LicentaSfranciog\LicentaSfranciog\obj\Debug\net6.0\ref\LicentaSfranciog.dll
+C:\Users\vlads\Desktop\workigOn\c#\LicentaSfranciog\LicentaSfranciog\bin\Debug\net6.0\Castle.Core.dll
+C:\Users\vlads\Desktop\workigOn\c#\LicentaSfranciog\LicentaSfranciog\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Proxies.dll
