@@ -1,4 +1,5 @@
 ﻿using LicentaSfranciog.Data;
+using LicentaSfranciog.Helpers;
 using LicentaSfranciog.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
@@ -23,9 +24,9 @@ namespace LicentaSfranciog.Controllers
 
         public IActionResult Privacy()
         {
-            var myEvent = _idal.GetEveniment(1);
-           // ViewData["Resources"] = JSONListHelper.GetResourceListJSONSString(_idal.GetLocatii());
-           // ViewData["Evenimente"] = JSONListHelper.GetEventListJSONString(_idal.GetEvenimente());
+            
+            ViewData["Resources"] = JSONListHelper.GetResourceListJSONSString(_idal.GetLocatii());
+            ViewData["Evenimente"] = JSONListHelper.GetEventListJSONString(_idal.GetEvenimente());
             return View();
         }
 

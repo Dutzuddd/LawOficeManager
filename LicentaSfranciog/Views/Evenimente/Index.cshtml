@@ -30,7 +30,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.EndTime)
             </th>
-            <th></th>
+            <th>
+                @Html.DisplayNameFor(model => model.Location)
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -47,6 +49,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.EndTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Location.Name)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |

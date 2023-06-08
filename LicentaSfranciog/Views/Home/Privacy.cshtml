@@ -8,7 +8,14 @@
     document.addEventListener('DOMContentLoaded', function () {
         var calendarEl = document.getElementById('calendar');
         var calendar = new FullCalendar.Calendar(calendarEl, {
-            initialView: 'dayGridMonth'
+            initialView: 'dayGridMonth',
+            events: @Html.Raw(ViewData["Evenimente"]),
+            resources: @Html.Raw(ViewData["Resources"]),
+            headerToolbar: {
+                left: 'today prev, next',
+                center: 'title',
+                right: 'timeGridWeek,dayGridMonth,listMonth'
+            },
         });
         calendar.render();
     });
