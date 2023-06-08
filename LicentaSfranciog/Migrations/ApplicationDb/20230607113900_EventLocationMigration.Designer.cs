@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LicentaSfranciog.Migrations.ApplicationDb
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230607113900_EventLocationMigration")]
+    partial class EventLocationMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -155,14 +157,9 @@ namespace LicentaSfranciog.Migrations.ApplicationDb
                     b.Property<DateTime>("StartTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(450)");
-
                     b.HasKey("Id");
 
                     b.HasIndex("LocationId");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("Evenimente");
                 });
@@ -378,13 +375,7 @@ namespace LicentaSfranciog.Migrations.ApplicationDb
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("LicentaSfranciog.Areas.Identity.Data.ApplicationUser", "User")
-                        .WithMany("Evenimente")
-                        .HasForeignKey("UserId");
-
                     b.Navigation("Location");
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("LicentaSfranciog.Models.Proces", b =>
@@ -447,11 +438,6 @@ namespace LicentaSfranciog.Migrations.ApplicationDb
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("LicentaSfranciog.Areas.Identity.Data.ApplicationUser", b =>
-                {
-                    b.Navigation("Evenimente");
                 });
 #pragma warning restore 612, 618
         }

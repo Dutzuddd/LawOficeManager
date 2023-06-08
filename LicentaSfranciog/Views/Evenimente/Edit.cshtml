@@ -1,0 +1,50 @@
+﻿@model LicentaSfranciog.Models.ViewModels.EventViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>Eveniment</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Eveniment.Id" />
+            <div class="form-group">
+                <label asp-for="Eveniment.Nume" class="control-label"></label>
+                <input asp-for="Eveniment.Nume" class="form-control" />
+                <span asp-validation-for="Eveniment.Nume" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Eveniment.Descriere" class="control-label"></label>
+                <input asp-for="Eveniment.Descriere" class="form-control" />
+                <span asp-validation-for="Eveniment.Descriere" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Eveniment.StartTime" class="control-label"></label>
+                <input asp-for="Eveniment.StartTime" class="form-control" />
+                <span asp-validation-for="Eveniment.StartTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Eveniment.EndTime" class="control-label"></label>
+                <input asp-for="Eveniment.EndTime" class="form-control" />
+                <span asp-validation-for="Eveniment.EndTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

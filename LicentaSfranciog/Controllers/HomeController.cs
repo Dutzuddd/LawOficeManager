@@ -23,6 +23,9 @@ namespace LicentaSfranciog.Controllers
 
         public IActionResult Privacy()
         {
+            var myEvent = _idal.GetEveniment(1);
+           // ViewData["Resources"] = JSONListHelper.GetResourceListJSONSString(_idal.GetLocatii());
+           // ViewData["Evenimente"] = JSONListHelper.GetEventListJSONString(_idal.GetEvenimente());
             return View();
         }
 

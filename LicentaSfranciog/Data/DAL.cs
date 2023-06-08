@@ -1,4 +1,5 @@
 ﻿using LicentaSfranciog.Models;
+using Microsoft.CodeAnalysis;
 using Microsoft.Extensions.Logging;
 using System.Data.Common;
 
@@ -19,12 +20,23 @@ namespace LicentaSfranciog.Data
         public void CreateProces(IFormCollection form);
         public void UpdateProces(IFormCollection form);
         public void DeleteProces(int id);
+        //Agenda(Calendar&events) methods
+        public List<Eveniment> GetEvenimente();
+        public List<Eveniment> GetEvenimenteleMele(string userId);
+        public Eveniment GetEveniment(int id);
+        public void CreateEveniment(IFormCollection form);
+        public void UpdateEveniment(IFormCollection form);
+        public void DeleteEveniment(int id);
+        public List<Loc> GetLocatii();
+        public Loc GetLoc(int id);
+        public void CreateLoc(Loc location);
+        public void DeleteLoc(int id);
     }
     public class DAL : IDAL
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        //client data access layer methods
+        //client data access layer methods implementation
         public List<Client> GetClients()
         {
             return db.Client.ToList();            
@@ -54,7 +66,7 @@ namespace LicentaSfranciog.Data
             db.SaveChanges();
         }
 
-        //Proces methods implementation
+        //Proces DAL methods implementation
         public List<Proces> GetProcese()
         {
             return db.Proces.ToList();
@@ -88,6 +100,61 @@ namespace LicentaSfranciog.Data
         {
             var myproces = db.Proces.Find(id);
             db.Proces.Remove(myproces);
+            db.SaveChanges();
+        }
+        //Agenda methods implementation
+        public List<Eveniment> GetEvenimente()
+        {
+            return db.Evenimente.ToList();
+        }
+        public List<Eveniment> GetEvenimenteleMele(string userId)
+        {
+            return db.Evenimente.Where(x => x.User.Id == userId).ToList();
+        }
+        public Eveniment GetEveniment(int id)
+        {
+            return db.Evenimente.FirstOrDefault(x => x.Id == id);
+        }
+        public void CreateEveniment(IFormCollection form)
+        {
+            var locname = form["Loc"].ToString();
+            var newEvent = new Eveniment(form, db.Locatii.FirstOrDefault(x => x.Name == locname));
+            db.Evenimente.Add(newEvent);
+            db.SaveChanges();
+        }
+        public void UpdateEveniment(IFormCollection form)
+        {
+            var eventid = int.Parse(form["Eveniment.Id"]);
+            var locname = form["Loc"].ToString();
+            var myEvent = db.Evenimente.FirstOrDefault(x => x.Id == eventid);
+            var location = db.Locatii.FirstOrDefault(x => x.Name == locname);
+            myEvent.UpdateEveniment(form, location);
+            db.Entry<Eveniment>(myEvent).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+            db.SaveChanges();
+        }
+        public void DeleteEveniment(int id)
+        {
+            var myEvent = db.Evenimente.Find(id);
+            db.Evenimente.Remove(myEvent);
+            db.SaveChanges();
+        }
+        public List<Loc> GetLocatii()
+        {
+            return db.Locatii.ToList();
+        }
+        public Loc GetLoc(int id)
+        {
+            return db.Locatii.Find(id);
+        }
+        public void CreateLoc(Loc location)
+        {
+            db.Locatii.Add(location);
+            db.SaveChanges();
+        }
+        public void DeleteLoc(int id)
+        {
+            var myLoc = db.Locatii.Find(id);
+            db.Locatii.Remove(myLoc);
             db.SaveChanges();
         }
     }

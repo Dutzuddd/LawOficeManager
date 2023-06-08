@@ -9,12 +9,28 @@
       "PackagePath": "staticwebassets\\css\\bootswatchSandstoneTheme.css"
     },
     {
+      "Id": "C:\\Users\\vlads\\Desktop\\workigOn\\c#\\LicentaSfranciog\\LicentaSfranciog\\wwwroot\\css\\main.css",
+      "PackagePath": "staticwebassets\\css\\main.css"
+    },
+    {
+      "Id": "C:\\Users\\vlads\\Desktop\\workigOn\\c#\\LicentaSfranciog\\LicentaSfranciog\\wwwroot\\css\\main.min.css",
+      "PackagePath": "staticwebassets\\css\\main.min.css"
+    },
+    {
       "Id": "C:\\Users\\vlads\\Desktop\\workigOn\\c#\\LicentaSfranciog\\LicentaSfranciog\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
       "Id": "C:\\Users\\vlads\\Desktop\\workigOn\\c#\\LicentaSfranciog\\LicentaSfranciog\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\vlads\\Desktop\\workigOn\\c#\\LicentaSfranciog\\LicentaSfranciog\\wwwroot\\js\\main.js",
+      "PackagePath": "staticwebassets\\js\\main.js"
+    },
+    {
+      "Id": "C:\\Users\\vlads\\Desktop\\workigOn\\c#\\LicentaSfranciog\\LicentaSfranciog\\wwwroot\\js\\main.min.js",
+      "PackagePath": "staticwebassets\\js\\main.min.js"
     },
     {
       "Id": "C:\\Users\\vlads\\Desktop\\workigOn\\c#\\LicentaSfranciog\\LicentaSfranciog\\wwwroot\\js\\site.js",
