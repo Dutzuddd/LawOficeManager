@@ -12,8 +12,8 @@
     <h3>@ViewData["Alert"]</h3>
 }
 
-<p>
-    <a asp-action="Create">Create New</a>
+<p> 
+    <a class="btn btn-primary" asp-action="Create">Adăugare loc nou</a>
 </p>
 <table class="table">
     <thead>
@@ -37,8 +37,8 @@
                 @Html.DisplayFor(modelItem => item.Adresa)
             </td>
             <td>                
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id">Detalii</a> |
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Ştergere</a>
             </td>
         </tr>
 }

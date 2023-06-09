@@ -11070,11 +11070,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\vlads\\Desktop\\workigOn\\c#\\LicentaSfranciog\\LicentaSfranciog\\LicentaSfranciog.csproj",
+      "projectUniqueName": "C:\\Users\\vlads\\Desktop\\workigOn\\NOW\\LicentaSfranciog\\LicentaSfranciog\\LicentaSfranciog.csproj",
       "projectName": "LicentaSfranciog",
-      "projectPath": "C:\\Users\\vlads\\Desktop\\workigOn\\c#\\LicentaSfranciog\\LicentaSfranciog\\LicentaSfranciog.csproj",
+      "projectPath": "C:\\Users\\vlads\\Desktop\\workigOn\\NOW\\LicentaSfranciog\\LicentaSfranciog\\LicentaSfranciog.csproj",
       "packagesPath": "C:\\Users\\vlads\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\vlads\\Desktop\\workigOn\\c#\\LicentaSfranciog\\LicentaSfranciog\\obj\\",
+      "outputPath": "C:\\Users\\vlads\\Desktop\\workigOn\\NOW\\LicentaSfranciog\\LicentaSfranciog\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

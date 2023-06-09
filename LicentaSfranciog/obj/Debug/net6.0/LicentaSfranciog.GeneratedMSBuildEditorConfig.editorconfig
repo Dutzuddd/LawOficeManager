@@ -9,149 +9,149 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = LicentaSfranciog
 build_property.RootNamespace = LicentaSfranciog
-build_property.ProjectDir = C:\Users\vlads\Desktop\workigOn\c#\LicentaSfranciog\LicentaSfranciog\
+build_property.ProjectDir = C:\Users\vlads\Desktop\workigOn\NOW\LicentaSfranciog\LicentaSfranciog\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\vlads\Desktop\workigOn\c#\LicentaSfranciog\LicentaSfranciog
+build_property.MSBuildProjectDirectory = C:\Users\vlads\Desktop\workigOn\NOW\LicentaSfranciog\LicentaSfranciog
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/vlads/Desktop/workigOn/c\#/LicentaSfranciog/LicentaSfranciog/Areas/Identity/Pages/Account/Login.cshtml]
+[C:/Users/vlads/Desktop/workigOn/NOW/LicentaSfranciog/LicentaSfranciog/Areas/Identity/Pages/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vlads/Desktop/workigOn/c\#/LicentaSfranciog/LicentaSfranciog/Areas/Identity/Pages/Account/Logout.cshtml]
+[C:/Users/vlads/Desktop/workigOn/NOW/LicentaSfranciog/LicentaSfranciog/Areas/Identity/Pages/Account/Logout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vlads/Desktop/workigOn/c\#/LicentaSfranciog/LicentaSfranciog/Areas/Identity/Pages/Account/Register.cshtml]
+[C:/Users/vlads/Desktop/workigOn/NOW/LicentaSfranciog/LicentaSfranciog/Areas/Identity/Pages/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vlads/Desktop/workigOn/c\#/LicentaSfranciog/LicentaSfranciog/Areas/Identity/Pages/Account/ResetPassword.cshtml]
+[C:/Users/vlads/Desktop/workigOn/NOW/LicentaSfranciog/LicentaSfranciog/Areas/Identity/Pages/Account/ResetPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZXNldFBhc3N3b3JkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vlads/Desktop/workigOn/c\#/LicentaSfranciog/LicentaSfranciog/Areas/Identity/Pages/Account/_ViewImports.cshtml]
+[C:/Users/vlads/Desktop/workigOn/NOW/LicentaSfranciog/LicentaSfranciog/Areas/Identity/Pages/Account/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfVmlld0ltcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vlads/Desktop/workigOn/c\#/LicentaSfranciog/LicentaSfranciog/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
+[C:/Users/vlads/Desktop/workigOn/NOW/LicentaSfranciog/LicentaSfranciog/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vlads/Desktop/workigOn/c\#/LicentaSfranciog/LicentaSfranciog/Areas/Identity/Pages/_ViewImports.cshtml]
+[C:/Users/vlads/Desktop/workigOn/NOW/LicentaSfranciog/LicentaSfranciog/Areas/Identity/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vlads/Desktop/workigOn/c\#/LicentaSfranciog/LicentaSfranciog/Areas/Identity/Pages/_ViewStart.cshtml]
+[C:/Users/vlads/Desktop/workigOn/NOW/LicentaSfranciog/LicentaSfranciog/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vlads/Desktop/workigOn/c\#/LicentaSfranciog/LicentaSfranciog/Views/Clienti/Create.cshtml]
+[C:/Users/vlads/Desktop/workigOn/NOW/LicentaSfranciog/LicentaSfranciog/Views/Clienti/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50aVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vlads/Desktop/workigOn/c\#/LicentaSfranciog/LicentaSfranciog/Views/Clienti/Delete.cshtml]
+[C:/Users/vlads/Desktop/workigOn/NOW/LicentaSfranciog/LicentaSfranciog/Views/Clienti/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50aVxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vlads/Desktop/workigOn/c\#/LicentaSfranciog/LicentaSfranciog/Views/Clienti/Details.cshtml]
+[C:/Users/vlads/Desktop/workigOn/NOW/LicentaSfranciog/LicentaSfranciog/Views/Clienti/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50aVxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vlads/Desktop/workigOn/c\#/LicentaSfranciog/LicentaSfranciog/Views/Clienti/Edit.cshtml]
+[C:/Users/vlads/Desktop/workigOn/NOW/LicentaSfranciog/LicentaSfranciog/Views/Clienti/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50aVxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vlads/Desktop/workigOn/c\#/LicentaSfranciog/LicentaSfranciog/Views/Clienti/Index.cshtml]
+[C:/Users/vlads/Desktop/workigOn/NOW/LicentaSfranciog/LicentaSfranciog/Views/Clienti/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50aVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vlads/Desktop/workigOn/c\#/LicentaSfranciog/LicentaSfranciog/Views/Evenimente/Create.cshtml]
+[C:/Users/vlads/Desktop/workigOn/NOW/LicentaSfranciog/LicentaSfranciog/Views/Evenimente/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbmltZW50ZVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vlads/Desktop/workigOn/c\#/LicentaSfranciog/LicentaSfranciog/Views/Evenimente/Delete.cshtml]
+[C:/Users/vlads/Desktop/workigOn/NOW/LicentaSfranciog/LicentaSfranciog/Views/Evenimente/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbmltZW50ZVxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vlads/Desktop/workigOn/c\#/LicentaSfranciog/LicentaSfranciog/Views/Evenimente/Details.cshtml]
+[C:/Users/vlads/Desktop/workigOn/NOW/LicentaSfranciog/LicentaSfranciog/Views/Evenimente/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbmltZW50ZVxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vlads/Desktop/workigOn/c\#/LicentaSfranciog/LicentaSfranciog/Views/Evenimente/Edit.cshtml]
+[C:/Users/vlads/Desktop/workigOn/NOW/LicentaSfranciog/LicentaSfranciog/Views/Evenimente/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbmltZW50ZVxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vlads/Desktop/workigOn/c\#/LicentaSfranciog/LicentaSfranciog/Views/Evenimente/Index.cshtml]
+[C:/Users/vlads/Desktop/workigOn/NOW/LicentaSfranciog/LicentaSfranciog/Views/Evenimente/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbmltZW50ZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vlads/Desktop/workigOn/c\#/LicentaSfranciog/LicentaSfranciog/Views/Home/Index.cshtml]
+[C:/Users/vlads/Desktop/workigOn/NOW/LicentaSfranciog/LicentaSfranciog/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vlads/Desktop/workigOn/c\#/LicentaSfranciog/LicentaSfranciog/Views/Home/Privacy.cshtml]
+[C:/Users/vlads/Desktop/workigOn/NOW/LicentaSfranciog/LicentaSfranciog/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vlads/Desktop/workigOn/c\#/LicentaSfranciog/LicentaSfranciog/Views/Locatii/Create.cshtml]
+[C:/Users/vlads/Desktop/workigOn/NOW/LicentaSfranciog/LicentaSfranciog/Views/Locatii/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9jYXRpaVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vlads/Desktop/workigOn/c\#/LicentaSfranciog/LicentaSfranciog/Views/Locatii/Delete.cshtml]
+[C:/Users/vlads/Desktop/workigOn/NOW/LicentaSfranciog/LicentaSfranciog/Views/Locatii/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9jYXRpaVxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vlads/Desktop/workigOn/c\#/LicentaSfranciog/LicentaSfranciog/Views/Locatii/Details.cshtml]
+[C:/Users/vlads/Desktop/workigOn/NOW/LicentaSfranciog/LicentaSfranciog/Views/Locatii/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9jYXRpaVxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vlads/Desktop/workigOn/c\#/LicentaSfranciog/LicentaSfranciog/Views/Locatii/Index.cshtml]
+[C:/Users/vlads/Desktop/workigOn/NOW/LicentaSfranciog/LicentaSfranciog/Views/Locatii/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9jYXRpaVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vlads/Desktop/workigOn/c\#/LicentaSfranciog/LicentaSfranciog/Views/Procese/Create.cshtml]
+[C:/Users/vlads/Desktop/workigOn/NOW/LicentaSfranciog/LicentaSfranciog/Views/Procese/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvY2VzZVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vlads/Desktop/workigOn/c\#/LicentaSfranciog/LicentaSfranciog/Views/Procese/Delete.cshtml]
+[C:/Users/vlads/Desktop/workigOn/NOW/LicentaSfranciog/LicentaSfranciog/Views/Procese/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvY2VzZVxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vlads/Desktop/workigOn/c\#/LicentaSfranciog/LicentaSfranciog/Views/Procese/Details.cshtml]
+[C:/Users/vlads/Desktop/workigOn/NOW/LicentaSfranciog/LicentaSfranciog/Views/Procese/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvY2VzZVxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vlads/Desktop/workigOn/c\#/LicentaSfranciog/LicentaSfranciog/Views/Procese/Edit.cshtml]
+[C:/Users/vlads/Desktop/workigOn/NOW/LicentaSfranciog/LicentaSfranciog/Views/Procese/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvY2VzZVxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vlads/Desktop/workigOn/c\#/LicentaSfranciog/LicentaSfranciog/Views/Procese/Index.cshtml]
+[C:/Users/vlads/Desktop/workigOn/NOW/LicentaSfranciog/LicentaSfranciog/Views/Procese/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvY2VzZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vlads/Desktop/workigOn/c\#/LicentaSfranciog/LicentaSfranciog/Views/Shared/Error.cshtml]
+[C:/Users/vlads/Desktop/workigOn/NOW/LicentaSfranciog/LicentaSfranciog/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vlads/Desktop/workigOn/c\#/LicentaSfranciog/LicentaSfranciog/Views/Shared/_LoginPartial.cshtml]
+[C:/Users/vlads/Desktop/workigOn/NOW/LicentaSfranciog/LicentaSfranciog/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vlads/Desktop/workigOn/c\#/LicentaSfranciog/LicentaSfranciog/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/vlads/Desktop/workigOn/NOW/LicentaSfranciog/LicentaSfranciog/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vlads/Desktop/workigOn/c\#/LicentaSfranciog/LicentaSfranciog/Views/_ViewImports.cshtml]
+[C:/Users/vlads/Desktop/workigOn/NOW/LicentaSfranciog/LicentaSfranciog/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vlads/Desktop/workigOn/c\#/LicentaSfranciog/LicentaSfranciog/Views/_ViewStart.cshtml]
+[C:/Users/vlads/Desktop/workigOn/NOW/LicentaSfranciog/LicentaSfranciog/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vlads/Desktop/workigOn/c\#/LicentaSfranciog/LicentaSfranciog/Views/Shared/_Layout.cshtml]
+[C:/Users/vlads/Desktop/workigOn/NOW/LicentaSfranciog/LicentaSfranciog/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-b1gv1epioz

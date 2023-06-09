@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Edit</h1>
+<h1>Editare Date Eveiment</h1>
 
 <h4>Eveniment</h4>
 <hr />
@@ -39,7 +39,8 @@
                 @Html.DropDownList("Loc",Model.Loc , "Selectează un Loc", new {@class="form-control"})
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Salvare" class="btn btn-primary" />
+                <a class="btn btn-outline-success" asp-action="Index">Inapoi la Evenimente</a>
             </div>
         </form>
     </div>
@@ -65,9 +66,6 @@
 
 </script>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
