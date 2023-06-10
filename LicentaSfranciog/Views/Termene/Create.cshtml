@@ -1,0 +1,62 @@
+﻿@model LicentaSfranciog.Models.ViewModels.TermenViewModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Adăugare Termen Nou</h1>
+
+<h4>Termen</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Termen.Nume" class="control-label"></label>
+                <input asp-for="Termen.Nume" class="form-control" />
+                <span asp-validation-for="Termen.Nume" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Termen.Descriere" class="control-label"></label>
+                <input asp-for="Termen.Descriere" class="form-control" />
+                <span asp-validation-for="Termen.Descriere" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Termen.Avocat" class="control-label"></label>
+                <input asp-for="Termen.Avocat" class="form-control" />
+                <span asp-validation-for="Termen.Avocat" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Termen.StartTime" class="control-label"></label>
+                <input asp-for="Termen.StartTime" class="form-control" />
+                <span asp-validation-for="Termen.StartTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Termen.EndTime" class="control-label"></label>
+                <input asp-for="Termen.EndTime" class="form-control" />
+                <span asp-validation-for="Termen.EndTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label>Loc</label>
+                @Html.DropDownList("Loc",Model.Loc , "Selectează un Loc", new {@class="form-control"})
+            </div>
+            <div class="form-group">
+                <label>Proces</label>
+                @Html.DropDownList("Proces",Model.Proces , "Selectează un Proces", new {@class="form-control"})
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+                <a class="btn btn-outline-success" asp-action="Index">Înapoi la Termene</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -45,5 +45,6 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     public DbSet<LicentaSfranciog.Models.Proces>? Proces { get; set; }
     public DbSet<Eveniment> Evenimente { get; set; }
     public DbSet<Loc> Locatii { get; set; }
+    public DbSet<Termen> Termene { get; set; }
 
 }

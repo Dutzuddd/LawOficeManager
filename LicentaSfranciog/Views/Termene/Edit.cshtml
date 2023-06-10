@@ -1,0 +1,103 @@
+﻿@model LicentaSfranciog.Models.ViewModels.TermenViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Editare Date Termen</h1>
+
+<h4>Termen</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Termen.Id" />
+            <div class="form-group">
+                <label asp-for="Termen.Nume" class="control-label"></label>
+                <input asp-for="Termen.Nume" class="form-control" />
+                <span asp-validation-for="Termen.Nume" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Termen.Descriere" class="control-label"></label>
+                <input asp-for="Termen.Descriere" class="form-control" />
+                <span asp-validation-for="Termen.Descriere" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Termen.Avocat" class="control-label"></label>
+                <input asp-for="Termen.Avocat" class="form-control" />
+                <span asp-validation-for="Termen.Avocat" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Termen.StartTime" class="control-label"></label>
+                <input asp-for="Termen.StartTime" class="form-control" />
+                <span asp-validation-for="Termen.StartTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Termen.EndTime" class="control-label"></label>
+                <input asp-for="Termen.EndTime" class="form-control" />
+                <span asp-validation-for="Termen.EndTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label>Loc</label>
+                @Html.DropDownList("Loc",Model.Loc , "Selectează un Loc", new {@class="form-control"})
+            </div>
+            <div class="form-group">
+                <label>Proces</label>
+                @Html.DropDownList("Proces",Model.Proces , "Selectează un Proces", new {@class="form-control"})
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Salvare" class="btn btn-primary" />
+                <a class="btn btn-outline-success" asp-action="Index">Înapoi la Termene</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<script>
+    function SetSelectedLocation(Loc) {
+        var locations = document.getElementById('Loc'), loc, i;
+
+        for (i = 0; i < locations.length; i++) {
+            loc = locations[i];
+            if (loc.innerText == Loc) {
+                loc.selected = "true";
+            }
+        }
+    }
+
+    var termenlocation = '@Html.Raw(Model.Loc)';
+
+    document.addEventListener('DOMContentLoaded', function () {
+        SetSelectedLocation(termenlocation);
+    });
+
+</script>
+
+<script>
+    function SetSelectedProces(Proces) {
+        var procese = document.getElementById('Proces'), proces, i;
+
+        for (i = 0; i < procese.length; i++) {
+            proces = procese[i];
+            if (loc.innerText == proces) {
+                proces.selected = "true";
+            }
+        }
+    }
+
+    var termenProces = '@Html.Raw(Model.Loc)';
+
+    document.addEventListener('DOMContentLoaded', function () {
+        SetSelectedLocation(termenProces);
+    });
+
+</script>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

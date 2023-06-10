@@ -31,6 +31,13 @@ namespace LicentaSfranciog.Data
         public Loc GetLoc(int id);
         public void CreateLoc(Loc location);
         public void DeleteLoc(int id);
+        //Termene DAL methods
+        public List<Termen> GetTermene();
+        public List<Termen> GetTermenByProces(int clientId);
+        public Termen GetTermen(int id);
+        public void CreateTermen(IFormCollection form);
+        public void UpdateTermen(IFormCollection form);
+        public void DeleteTermen(int id);
     }
     public class DAL : IDAL
     {
@@ -155,6 +162,46 @@ namespace LicentaSfranciog.Data
         {
             var myLoc = db.Locatii.Find(id);
             db.Locatii.Remove(myLoc);
+            db.SaveChanges();
+        }
+        //Termene methods implementation
+        public List<Termen> GetTermene()
+        {
+            return db.Termene.ToList();
+        }
+        public List<Termen> GetTermenByProces(int procesId)
+        {
+            return db.Termene.Where(x => x.Proces.Id == procesId).ToList();
+        }
+        public Termen GetTermen(int id)
+        {
+            return db.Termene.FirstOrDefault(x => x.Id == id);
+        }
+        public void CreateTermen(IFormCollection form)
+        {
+            var numeproces = form["Proces"].ToString();
+            var numeloc = form["Loc"].ToString();
+            var newTermen = new Termen(form, db.Proces.FirstOrDefault(x => x.Nume == numeproces),
+                db.Locatii.FirstOrDefault(x => x.Name == numeloc));
+            db.Termene.Add(newTermen);
+            db.SaveChanges();
+        }
+        public void UpdateTermen(IFormCollection form)
+        {
+            var termenId = int.Parse(form["Termen.Id"]);
+            var numeproces = form["Proces"].ToString();
+            var numeloc = form["Loc"].ToString();
+            var mytermen = db.Termene.FirstOrDefault(x => x.Id == termenId);
+            var myproces = db.Proces.FirstOrDefault(x => x.Nume == numeproces);
+            var myloc = db.Locatii.FirstOrDefault(x => x.Name == numeloc);
+            mytermen.UpdateTermen(form, myproces, myloc);
+            db.Entry<Termen>(mytermen).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+            db.SaveChanges();
+        }
+        public void DeleteTermen(int id)
+        {
+            var mytermen = db.Termene.Find(id);
+            db.Termene.Remove(mytermen);
             db.SaveChanges();
         }
     }

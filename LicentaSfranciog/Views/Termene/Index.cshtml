@@ -1,19 +1,19 @@
-﻿@model IEnumerable<LicentaSfranciog.Models.Proces>
+﻿@model IEnumerable<LicentaSfranciog.Models.Termen>
 
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Procesele Cabinetului de Avocatura</h1>
+<h1>Termenele Cabinetului de Avocatura</h1>
 
-@if(ViewData["Alert"] != null)
+@if (ViewData["Alert"] != null)
 {
     <h3>@ViewData["Alert"]</h3>
 }
 
 <p>
-    <a class="btn btn-primary" asp-action="Create">Adăugare Proces Nou</a>
+    <a class="btn btn-primary" asp-action="Create">Adăugare Termen Nou</a>
 </p>
 <table class="table">
     <thead>
@@ -22,51 +22,49 @@
                 @Html.DisplayNameFor(model => model.Nume)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Tip)
+                @Html.DisplayNameFor(model => model.Descriere)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Partile)
+                @Html.DisplayNameFor(model => model.Avocat)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Obiect)
+                @Html.DisplayNameFor(model => model.StartTime)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Solutie)
+                @Html.DisplayNameFor(model => model.EndTime)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.OreLucrate)
+                @Html.DisplayNameFor(model => model.Loc)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Client)
+                @Html.DisplayNameFor(model => model.Proces)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-        @if (Model.Any())
-        {
 @foreach (var item in Model) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Nume)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Tip)
+                @Html.DisplayFor(modelItem => item.Descriere)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Partile)
+                @Html.DisplayFor(modelItem => item.Avocat)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Obiect)
+                @Html.DisplayFor(modelItem => item.StartTime)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Solutie)
+                @Html.DisplayFor(modelItem => item.EndTime)
+            </td>            
+            <td>
+                @Html.DisplayFor(modelItem => item.Loc.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.OreLucrate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Client.Nume)
+                @Html.DisplayFor(modelItem => item.Proces.Nume)
             </td>
             <td>
                 <a class="btn btn-secondary" asp-action="Edit" asp-route-id="@item.Id">Editare</a> |
@@ -74,11 +72,6 @@
                 <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Ştergere</a>
             </td>
         </tr>
-    }
-        }
-        else
-        {
-            <p>Niciun proces disponibil.</p>
-        }
+}
     </tbody>
 </table>

@@ -8,63 +8,64 @@ using Microsoft.EntityFrameworkCore;
 using LicentaSfranciog.Models;
 using LicentaSfranciog.Data;
 using LicentaSfranciog.Models.ViewModels;
+using System.Diagnostics;
 
 namespace LicentaSfranciog.Controllers
 {
-    public class ProceseController : Controller
+    public class TermeneController : Controller
     {
         //private readonly ApplicationDbContext _context;
         private readonly IDAL _idal;
 
-        public ProceseController(IDAL dal)
+        public TermeneController(IDAL dal)
         {
             _idal = dal;
         }
 
-        // GET: Procese
+        // GET: Termene
         public IActionResult Index()
         {
             if (TempData["Alert"] != null)
             {
                 ViewData["Alert"] = TempData["Alert"];
             }
-            return View(_idal.GetProcese());
+            return View(_idal.GetTermene());
         }
 
-        // GET: Procese/Details/5
+        // GET: Termene/Details/5
         public IActionResult Details(int? id)
         {
-            if (id == null)
+            if (id == null )
             {
                 return NotFound();
             }
 
-            var @proces = _idal.GetProces((int)id);
-            if (@proces == null)
+            var termen = _idal.GetTermen((int)id);
+            if (termen == null)
             {
                 return NotFound();
             }
 
-            return View(@proces);
+            return View(termen);
         }
 
-        // GET: Procese/Create
+        // GET: Termene/Create
         public IActionResult Create()
         {
-            return View(new ProcesViewModel(_idal.GetClients()));
+            return View(new TermenViewModel(_idal.GetProcese(), _idal.GetLocatii()));
         }
 
-        // POST: Procese/Create
+        // POST: Termene/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(ProcesViewModel viewModel,IFormCollection form)
+        public async Task<IActionResult> Create(TermenViewModel viewModel, IFormCollection form)
         {
             try
             {
-                _idal.CreateProces(form);
-                TempData["Alert"] = "Succes! Proces introdus: " + form["Proces.Nume"];
+                _idal.CreateTermen(form);
+                TempData["Alert"] = "Succes! Termen introdus: " + form["Termen.Nume"];
                 return RedirectToAction("Index");
             }
             catch (Exception ex)
@@ -74,7 +75,7 @@ namespace LicentaSfranciog.Controllers
             }
         }
 
-        // GET: Procese/Edit/5
+        // GET: Termene/Edit/5
         public IActionResult Edit(int? id)
         {
             if (id == null )
@@ -82,16 +83,16 @@ namespace LicentaSfranciog.Controllers
                 return NotFound();
             }
 
-            var @proces = _idal.GetProces((int)id);
-            if (@proces == null)
+            var termen = _idal.GetTermen((int)id);
+            if (termen == null)
             {
                 return NotFound();
             }
-            var vm = new ProcesViewModel(@proces,_idal.GetClients());
+            var vm = new TermenViewModel(termen, _idal.GetProcese(), _idal.GetLocatii());
             return View(vm);
         }
 
-        // POST: Procese/Edit/5
+        // POST: Termene/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -100,46 +101,48 @@ namespace LicentaSfranciog.Controllers
         {
             try
             {
-                _idal.UpdateProces(form);
-                TempData["Alert"] = "Succes! S-au modificat datele pentru procesul: " + form["Proces.Nume"];
+                _idal.UpdateTermen(form);
+                TempData["Alert"] = "Succes! S-au modificat datele pentru termenul: " + form["Termen.Nume"];
                 return RedirectToAction(nameof(Index));
             }
             catch (Exception ex)
             {
                 ViewData["Alert"] = "An error occurred: " + ex.Message;
-                var vm = new ProcesViewModel(_idal.GetProces(id), _idal.GetClients());
+                var vm = new TermenViewModel(_idal.GetTermen(id), _idal.GetProcese(), _idal.GetLocatii());
                 return View(vm);
             }
         }
 
-        // GET: Procese/Delete/5
+        // GET: Termene/Delete/5
         public IActionResult Delete(int? id)
         {
             if (id == null )
             {
                 return NotFound();
             }
-            var @proces = _idal.GetProces((int)id);
-            if (@proces == null)
+
+            var termen = _idal.GetTermen((int)id);
+            if (termen == null)
             {
                 return NotFound();
             }
-            return View(@proces);
+
+            return View(termen);
         }
 
-        // POST: Procese/Delete/5
+        // POST: Termene/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public IActionResult DeleteConfirmed(int id)
         {
-            _idal.DeleteProces(id);
-            TempData["Alert"] = "Succes!Proces sters!";
+            _idal.DeleteTermen(id);
+            TempData["Alert"] = "Succes!Termen sters!";
             return RedirectToAction(nameof(Index));
         }
 
-        //private bool ProcesExists(int id)
+        //private bool TermenExists(int id)
         //{
-        //  return (_context.Proces?.Any(e => e.Id == id)).GetValueOrDefault();
+        //  return (_context.Termene?.Any(e => e.Id == id)).GetValueOrDefault();
         //}
     }
 }
