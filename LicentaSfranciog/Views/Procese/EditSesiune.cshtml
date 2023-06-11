@@ -1,0 +1,51 @@
+﻿@model LicentaSfranciog.Models.ViewModels.SesiuneLucruViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>SesiuneLucru</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="EditSesiune">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="SesiuneLucru.Id" />
+            <div class="form-group">
+                <label asp-for="SesiuneLucru.avocat" class="control-label"></label>
+                <input asp-for="SesiuneLucru.avocat" class="form-control" />
+                <span asp-validation-for="SesiuneLucru.avocat" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SesiuneLucru.DataCal" class="control-label"></label>
+                <input asp-for="SesiuneLucru.DataCal" class="form-control" />
+                <span asp-validation-for="SesiuneLucru.DataCal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SesiuneLucru.numarOre" class="control-label"></label>
+                <input asp-for="SesiuneLucru.numarOre" class="form-control" />
+                <span asp-validation-for="SesiuneLucru.numarOre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label>Proces</label>
+                @Html.DropDownList("Proces",Model.Proces , "Selectează un Proces", new {@class="form-control"})
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to Procese</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

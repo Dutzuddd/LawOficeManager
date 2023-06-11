@@ -13,6 +13,7 @@ namespace LicentaSfranciog.Data
         public void CreateClient(Client client);
         public void UpdateClient(IFormCollection form);
         public void DeleteClient(int id);
+
         //proces data access layer methods
         public List<Proces> GetProcese();
         public List<Proces> GetMyProces(int clientId);
@@ -20,6 +21,7 @@ namespace LicentaSfranciog.Data
         public void CreateProces(IFormCollection form);
         public void UpdateProces(IFormCollection form);
         public void DeleteProces(int id);
+
         //Agenda(Calendar&events) methods
         public List<Eveniment> GetEvenimente();
         public List<Eveniment> GetEvenimenteleMele(string userId);
@@ -31,13 +33,21 @@ namespace LicentaSfranciog.Data
         public Loc GetLoc(int id);
         public void CreateLoc(Loc location);
         public void DeleteLoc(int id);
+
         //Termene DAL methods
         public List<Termen> GetTermene();
-        public List<Termen> GetTermenByProces(int clientId);
+        public List<Termen> GetTermenByProces(int procesId);
         public Termen GetTermen(int id);
         public void CreateTermen(IFormCollection form);
         public void UpdateTermen(IFormCollection form);
         public void DeleteTermen(int id);
+
+        //SesiunLucru DAL methods
+        public List<SesiuneLucru> GetSesiuniProces(int procesId);
+        public SesiuneLucru GetSesiune(int id);
+        public void CreateSesiune(IFormCollection form);
+        public void UpdateSesiune(IFormCollection form);
+        public void DeleteSesiune(int id);
     }
     public class DAL : IDAL
     {
@@ -164,6 +174,7 @@ namespace LicentaSfranciog.Data
             db.Locatii.Remove(myLoc);
             db.SaveChanges();
         }
+
         //Termene methods implementation
         public List<Termen> GetTermene()
         {
@@ -202,6 +213,39 @@ namespace LicentaSfranciog.Data
         {
             var mytermen = db.Termene.Find(id);
             db.Termene.Remove(mytermen);
+            db.SaveChanges();
+        }
+
+        //SesiuneLucru methods implementation
+        public List<SesiuneLucru> GetSesiuniProces(int procesId)
+        {
+            return db.SeiuniDosar.Where(x => x.Proces.Id == procesId).ToList();
+        }
+        public SesiuneLucru GetSesiune(int id)
+        {
+            return db.SeiuniDosar.FirstOrDefault(x => x.Id == id);
+        }
+        public void CreateSesiune(IFormCollection form)
+        {
+            var numeproces = form["Proces"].ToString();
+            var newSesiune = new SesiuneLucru(form, db.Proces.FirstOrDefault(x => x.Nume == numeproces));
+            db.SeiuniDosar.Add(newSesiune);
+            db.SaveChanges();
+        }
+        public void UpdateSesiune(IFormCollection form)
+        {
+            var sesiuneId = int.Parse(form["SesiuneLucru.Id"]);
+            var numeproces = form["Proces"].ToString();
+            var sesiuneaMea = db.SeiuniDosar.FirstOrDefault(x => x.Id == sesiuneId);
+            var ProcesSesiune = db.Proces.FirstOrDefault(x => x.Nume == numeproces);
+            sesiuneaMea.UpdateSesiuneLucru(form, ProcesSesiune);
+            db.Entry<SesiuneLucru>(sesiuneaMea).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+            db.SaveChanges();
+        }
+        public void DeleteSesiune(int id)
+        {
+            var sesiune = db.SeiuniDosar.Find(id);
+            db.SeiuniDosar.Remove(sesiune);
             db.SaveChanges();
         }
     }

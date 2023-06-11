@@ -12,8 +12,7 @@ using LicentaSfranciog.Models.ViewModels;
 namespace LicentaSfranciog.Controllers
 {
     public class ProceseController : Controller
-    {
-        //private readonly ApplicationDbContext _context;
+    {        
         private readonly IDAL _idal;
 
         public ProceseController(IDAL dal)
@@ -137,9 +136,132 @@ namespace LicentaSfranciog.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        //private bool ProcesExists(int id)
+        // Get: Proces/SesiuniLucrate
+        public IActionResult SesiuniLucrate(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var sesiuni = _idal.GetSesiuniProces((int)id);
+            if (sesiuni == null)
+            {
+                return NotFound();
+            }
+            return View(sesiuni);
+        }
+        //Create Sesiune Noua
+        public IActionResult CreateSesiune()
+        {
+            return View(new SesiuneLucruViewModel(_idal.GetProcese()));
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CreateSesiune(SesiuneLucruViewModel viewModel, IFormCollection form)
+        {
+            try
+            {
+                _idal.CreateSesiune(form);
+                TempData["Alert"] = "Succes! Sesiune introdusă pentru procesul: " + form["Proces"];
+                return RedirectToAction("Index");
+            }
+            catch (Exception ex)
+            {
+                ViewData["Alert"] = "An error occurred" + ex.Message;
+                return View(viewModel);
+            }
+        }
+        public IActionResult SesiuneDetails(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var sesiuneLucru = _idal.GetSesiune((int)id);
+            if (sesiuneLucru == null)
+            {
+                return NotFound();
+            }
+
+            return View(sesiuneLucru);
+        }
+
+        public IActionResult EditSesiune(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var sesiuneLucru = _idal.GetSesiune((int)id);
+            if (sesiuneLucru == null)
+            {
+                return NotFound();
+            }
+            var vm = new SesiuneLucruViewModel(sesiuneLucru, _idal.GetProcese());
+            return View(vm);
+        }
+
+        // POST: SesiuniLucru/Edit/5
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> EditSesiune(int id, IFormCollection form)
+        {
+            try
+            {
+                _idal.UpdateSesiune(form);
+                TempData["Alert"] = "Succes! Date modificate pentru sesiunea de lucru!: "; /*+ form["Eveniment.Nume"];*/
+                return RedirectToAction(nameof(Index));
+            }
+            catch (Exception ex)
+            {
+                ViewData["Alert"] = "An error occurred: " + ex.Message;
+                var vm = new SesiuneLucruViewModel(_idal.GetSesiune(id), _idal.GetProcese());
+                return View(vm);
+            }
+        }
+        public IActionResult DeleteSesiune(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var sesiuneLucru = _idal.GetSesiune((int)id);
+            if (sesiuneLucru == null)
+            {
+                return NotFound();
+            }
+
+            return View(sesiuneLucru);
+        }
+
+        // POST: SesiuniLucru/Delete/5
+        [HttpPost, ActionName("DeleteSesiune")]
+        [ValidateAntiForgeryToken]
+        public IActionResult DeleteSesiuneConfirmed(int id)
+        {
+            _idal.DeleteSesiune(id);
+            TempData["Alert"] = "Sesiunea de Lucru ştearsă!";
+            return RedirectToAction(nameof(Index));
+        }
+
+        //redirect
+        //public IActionResult RedirectToSesiuneEdit(int id)
         //{
-        //  return (_context.Proces?.Any(e => e.Id == id)).GetValueOrDefault();
+        //    return Redirect("~/SesiuniLucru/Edit/" + id);
+        //}
+        //public IActionResult RedirectToSesiuneDetails(int id)
+        //{
+        //    return Redirect("~/SesiuniLucru/Details/" + id);
+        //}
+        //public IActionResult RedirectToSesiuneDelete(int id)
+        //{
+        //    return Redirect("~/SesiuniLucru/Details/" + id);
         //}
     }
 }

@@ -8,31 +8,31 @@ using Microsoft.EntityFrameworkCore;
 using LicentaSfranciog.Models;
 using LicentaSfranciog.Data;
 using LicentaSfranciog.Models.ViewModels;
-using System.Diagnostics;
+using Microsoft.Extensions.Logging;
 
 namespace LicentaSfranciog.Controllers
 {
-    public class TermeneController : Controller
+    public class SesiuniLucruController : Controller
     {
-        //private readonly ApplicationDbContext _context;
+       // private readonly ApplicationDbContext _context;
         private readonly IDAL _idal;
 
-        public TermeneController(IDAL dal)
+        public SesiuniLucruController(IDAL dal)
         {
             _idal = dal;
         }
 
-        // GET: Termene
-        public IActionResult Index()
+        // GET: SesiuniLucru
+        public IActionResult Index(int id)
         {
             if (TempData["Alert"] != null)
             {
                 ViewData["Alert"] = TempData["Alert"];
             }
-            return View(_idal.GetTermene());
+            return View(_idal.GetSesiuniProces(id));
         }
 
-        // GET: Termene/Details/5
+        // GET: SesiuniLucru/Details/5
         public IActionResult Details(int? id)
         {
             if (id == null )
@@ -40,32 +40,32 @@ namespace LicentaSfranciog.Controllers
                 return NotFound();
             }
 
-            var termen = _idal.GetTermen((int)id);
-            if (termen == null)
+            var sesiuneLucru = _idal.GetSesiune((int)id);
+            if (sesiuneLucru == null)
             {
                 return NotFound();
             }
 
-            return View(termen);
+            return View(sesiuneLucru);
         }
 
-        // GET: Termene/Create
+        // GET: SesiuniLucru/Create
         public IActionResult Create()
         {
-            return View(new TermenViewModel(_idal.GetProcese(), _idal.GetLocatii()));
+            return View(new SesiuneLucruViewModel(_idal.GetProcese()));
         }
 
-        // POST: Termene/Create
+        // POST: SesiuniLucru/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(TermenViewModel viewModel, IFormCollection form)
+        public async Task<IActionResult> Create(SesiuneLucruViewModel viewModel, IFormCollection form)
         {
             try
             {
-                _idal.CreateTermen(form);
-                TempData["Alert"] = "Succes! Termen introdus: " + form["Termen.Nume"];
+                _idal.CreateSesiune(form);
+                TempData["Alert"] = "Succes! Sesiune introdusă pentru procesul: " + form["Proces"];
                 return RedirectToAction("Index");
             }
             catch (Exception ex)
@@ -75,7 +75,7 @@ namespace LicentaSfranciog.Controllers
             }
         }
 
-        // GET: Termene/Edit/5
+        // GET: SesiuniLucru/Edit/5
         public IActionResult Edit(int? id)
         {
             if (id == null )
@@ -83,16 +83,16 @@ namespace LicentaSfranciog.Controllers
                 return NotFound();
             }
 
-            var termen = _idal.GetTermen((int)id);
-            if (termen == null)
+            var sesiuneLucru = _idal.GetSesiune((int)id);
+            if (sesiuneLucru == null)
             {
                 return NotFound();
             }
-            var vm = new TermenViewModel(termen, _idal.GetProcese(), _idal.GetLocatii());
+            var vm = new SesiuneLucruViewModel(sesiuneLucru, _idal.GetProcese());
             return View(vm);
         }
 
-        // POST: Termene/Edit/5
+        // POST: SesiuniLucru/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -101,19 +101,19 @@ namespace LicentaSfranciog.Controllers
         {
             try
             {
-                _idal.UpdateTermen(form);
-                TempData["Alert"] = "Succes! S-au modificat datele pentru termenul: " + form["Termen.Nume"];
+                _idal.UpdateSesiune(form);
+                TempData["Alert"] = "Succes! Date modificate pentru sesiunea de lucru!: "; /*+ form["Eveniment.Nume"];*/
                 return RedirectToAction(nameof(Index));
             }
             catch (Exception ex)
             {
                 ViewData["Alert"] = "An error occurred: " + ex.Message;
-                var vm = new TermenViewModel(_idal.GetTermen(id), _idal.GetProcese(), _idal.GetLocatii());
+                var vm = new SesiuneLucruViewModel(_idal.GetSesiune(id), _idal.GetProcese());
                 return View(vm);
             }
         }
 
-        // GET: Termene/Delete/5
+        // GET: SesiuniLucru/Delete/5
         public IActionResult Delete(int? id)
         {
             if (id == null )
@@ -121,54 +121,28 @@ namespace LicentaSfranciog.Controllers
                 return NotFound();
             }
 
-            var termen = _idal.GetTermen((int)id);
-            if (termen == null)
+            var sesiuneLucru = _idal.GetSesiune((int)id);
+            if (sesiuneLucru == null)
             {
                 return NotFound();
             }
 
-            return View(termen);
+            return View(sesiuneLucru);
         }
 
-        // POST: Termene/Delete/5
+        // POST: SesiuniLucru/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public IActionResult DeleteConfirmed(int id)
         {
-            _idal.DeleteTermen(id);
-            TempData["Alert"] = "Succes!Termen sters!";
+            _idal.DeleteSesiune(id);
+            TempData["Alert"] = "Sesiunea de Lucru ştearsă!";
             return RedirectToAction(nameof(Index));
         }
 
-
-        //Create Loc
-        public IActionResult CreateLoc()
-        {
-            return View();
-        }
-
-        // POST: Locatii/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> CreateLoc([Bind("Id,Name,Adresa")] Loc loc)
-        {
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    _idal.CreateLoc(loc);
-                    TempData["Alert"] = "Succes! Loc adăugat: " + loc.Name;
-                    return RedirectToAction(nameof(Index));
-                }
-                catch (Exception ex)
-                {
-                    ViewData["Alert"] = "An error occurred: " + ex.Message;
-                    return View(loc);
-                }
-            }
-            return View(loc);
-        }
+        //private bool SesiuneLucruExists(int id)
+        //{
+        //  return (_context.SeiuniDosar?.Any(e => e.Id == id)).GetValueOrDefault();
+        //}
     }
 }

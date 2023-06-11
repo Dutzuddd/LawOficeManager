@@ -116,8 +116,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvY2VzZVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/vlads/Desktop/workigOn/NOW/LicentaSfranciog/LicentaSfranciog/Views/Procese/CreateSesiune.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvY2VzZVxDcmVhdGVTZXNpdW5lLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/vlads/Desktop/workigOn/NOW/LicentaSfranciog/LicentaSfranciog/Views/Procese/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvY2VzZVxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vlads/Desktop/workigOn/NOW/LicentaSfranciog/LicentaSfranciog/Views/Procese/DeleteSesiune.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvY2VzZVxEZWxldGVTZXNpdW5lLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/vlads/Desktop/workigOn/NOW/LicentaSfranciog/LicentaSfranciog/Views/Procese/Details.cshtml]
@@ -128,8 +136,40 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvY2VzZVxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/vlads/Desktop/workigOn/NOW/LicentaSfranciog/LicentaSfranciog/Views/Procese/EditSesiune.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvY2VzZVxFZGl0U2VzaXVuZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/vlads/Desktop/workigOn/NOW/LicentaSfranciog/LicentaSfranciog/Views/Procese/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvY2VzZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vlads/Desktop/workigOn/NOW/LicentaSfranciog/LicentaSfranciog/Views/Procese/SesiuneDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvY2VzZVxTZXNpdW5lRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vlads/Desktop/workigOn/NOW/LicentaSfranciog/LicentaSfranciog/Views/Procese/SesiuniLucrate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvY2VzZVxTZXNpdW5pTHVjcmF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vlads/Desktop/workigOn/NOW/LicentaSfranciog/LicentaSfranciog/Views/SesiuniLucru/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VzaXVuaUx1Y3J1XENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vlads/Desktop/workigOn/NOW/LicentaSfranciog/LicentaSfranciog/Views/SesiuniLucru/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VzaXVuaUx1Y3J1XERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vlads/Desktop/workigOn/NOW/LicentaSfranciog/LicentaSfranciog/Views/SesiuniLucru/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VzaXVuaUx1Y3J1XERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vlads/Desktop/workigOn/NOW/LicentaSfranciog/LicentaSfranciog/Views/SesiuniLucru/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VzaXVuaUx1Y3J1XEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vlads/Desktop/workigOn/NOW/LicentaSfranciog/LicentaSfranciog/Views/SesiuniLucru/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VzaXVuaUx1Y3J1XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/vlads/Desktop/workigOn/NOW/LicentaSfranciog/LicentaSfranciog/Views/Shared/Error.cshtml]
@@ -146,6 +186,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/vlads/Desktop/workigOn/NOW/LicentaSfranciog/LicentaSfranciog/Views/Termene/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVybWVuZVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vlads/Desktop/workigOn/NOW/LicentaSfranciog/LicentaSfranciog/Views/Termene/CreateLoc.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVybWVuZVxDcmVhdGVMb2MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/vlads/Desktop/workigOn/NOW/LicentaSfranciog/LicentaSfranciog/Views/Termene/Delete.cshtml]

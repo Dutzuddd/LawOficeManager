@@ -46,5 +46,6 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     public DbSet<Eveniment> Evenimente { get; set; }
     public DbSet<Loc> Locatii { get; set; }
     public DbSet<Termen> Termene { get; set; }
+    public DbSet<SesiuneLucru> SeiuniDosar { get; set; }
 
 }

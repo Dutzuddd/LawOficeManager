@@ -1,0 +1,43 @@
+﻿@model LicentaSfranciog.Models.SesiuneLucru
+
+@{
+    ViewData["Title"] = "SesiuneDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>SesiuneLucru</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.avocat)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.avocat)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DataCal)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DataCal)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.numarOre)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.numarOre)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Proces)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Proces.Nume)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index" >Back to Proces</a>
+</div>

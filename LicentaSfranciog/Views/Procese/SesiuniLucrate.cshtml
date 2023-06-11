@@ -1,0 +1,65 @@
+﻿@model IEnumerable<LicentaSfranciog.Models.SesiuneLucru>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Sesiuni de Lucru</h1>
+
+@if (ViewData["Alert"] != null)
+{
+    <h3>@ViewData["Alert"]</h3>
+}
+
+<p>
+    <a class="btn btn-primary" asp-action="CreateSesiune">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.avocat)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataCal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.numarOre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Proces)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.avocat)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataCal)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.numarOre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Proces.Nume)
+                </td>
+                <td>
+                    <a asp-action="EditSesiune" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="SesiuneDetails" asp-route-id="@item.Id">Detalii</a> |                     |
+                    <a asp-action="DeleteSesiune" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@*
+<a href="@Url.Action("RedirectToSesiuneEdit", new { id = item.Id })">Edit</a> |
+<a href="@Url.Action("RedirectToSesiuneDetails", new { id = item.Id })">Details</a> |
+<a href="@Url.Action("RedirectToSesiuneDetails", new { id = item.Id })">Delete</a>*@
