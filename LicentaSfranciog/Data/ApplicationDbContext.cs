@@ -8,6 +8,7 @@ using LicentaSfranciog.Areas.Identity.Data;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.CodeAnalysis;
 using Microsoft.Extensions.Logging;
+using System.Reflection.Emit;
 
 public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
@@ -22,6 +23,9 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
+        builder.Entity<Factura>()
+        .Property(f => f.Pret)
+        .HasColumnType("decimal(18, 2)");
         // Customize the ASP.NET Identity model and override the defaults if needed.
         // For example, you can rename the ASP.NET Identity table names and more.
         // Add your customizations after calling base.OnModelCreating(builder);
@@ -47,5 +51,6 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     public DbSet<Loc> Locatii { get; set; }
     public DbSet<Termen> Termene { get; set; }
     public DbSet<SesiuneLucru> SeiuniDosar { get; set; }
+    public DbSet<Factura> Facturi { get; set; }
 
 }
