@@ -52,5 +52,5 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     public DbSet<Termen> Termene { get; set; }
     public DbSet<SesiuneLucru> SeiuniDosar { get; set; }
     public DbSet<Factura> Facturi { get; set; }
-
+    public DbSet<Contact> Contact { get; set; }
 }

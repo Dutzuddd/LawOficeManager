@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "5zLGvqKJImuxTHQDZgc7fFadesSwsV1myvMcozbxOg0=",
+  "Hash": "IBhoal5inzoar3pfmxG5wL69YvbRCUj61U0aLvwJZ7U=",
   "Source": "LicentaSfranciog",
   "BasePath": "_content/LicentaSfranciog",
   "Mode": "Default",
@@ -1154,6 +1154,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\vlads\\Desktop\\workigOn\\NOW\\LicentaSfranciog\\LicentaSfranciog\\wwwroot\\images\\courtroom2.jpg",
+      "SourceId": "LicentaSfranciog",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\vlads\\Desktop\\workigOn\\NOW\\LicentaSfranciog\\LicentaSfranciog\\wwwroot\\",
+      "BasePath": "_content/LicentaSfranciog",
+      "RelativePath": "images/courtroom2.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\courtroom2.jpg"
     },
     {
       "Identity": "C:\\Users\\vlads\\Desktop\\workigOn\\NOW\\LicentaSfranciog\\LicentaSfranciog\\wwwroot\\js\\main.js",

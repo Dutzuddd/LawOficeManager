@@ -57,6 +57,12 @@ namespace LicentaSfranciog.Data
         public void UpdateFactura(IFormCollection form);
         public void DeleteFactura(int id);
 
+        //Contact DAL methhods
+        public List<Contact> GetContacte();
+        public Contact GetContact(int id);
+        public void CreateContact(Contact contact);        
+        public void DeleteContact(int id);
+
     }
     public class DAL : IDAL
     {
@@ -296,6 +302,27 @@ namespace LicentaSfranciog.Data
         {
             var FacturaMea = db.Facturi.Find(id);
             db.Facturi.Remove(FacturaMea);
+            db.SaveChanges();
+        }
+
+        //Contact DAL methods implementation
+        public List<Contact> GetContacte()
+        {
+            return db.Contact.ToList();
+        }
+        public Contact GetContact(int id)
+        {
+            return db.Contact.FirstOrDefault(x => x.Id == id);
+        }
+        public void CreateContact(Contact contact)
+        {
+            db.Contact.Add(contact);
+            db.SaveChanges();
+        }
+        public void DeleteContact(int id)
+        {
+            var myContact = db.Contact.Find(id);
+            db.Contact.Remove(myContact);
             db.SaveChanges();
         }
     }

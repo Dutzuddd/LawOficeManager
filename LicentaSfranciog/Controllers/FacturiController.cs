@@ -64,7 +64,7 @@ namespace LicentaSfranciog.Controllers
             try
             {
                 _idal.CreateFactura(form);
-                TempData["Alert"] = "Succes! Factură introdusă pentru procesul: " + form["Factura.Proces"];
+                TempData["Alert"] = "Succes! Factură introdusă pentru procesul: " + form["Proces"];
                 return RedirectToAction("Index");
             }
             catch (Exception ex)
@@ -101,7 +101,7 @@ namespace LicentaSfranciog.Controllers
             try
             {
                 _idal.UpdateFactura(form);
-                TempData["Alert"] = "Succes! S-au modificat datele factruii pentru procesul: " + form["Factura.Proces"];
+                TempData["Alert"] = "Succes! S-au modificat datele factruii pentru procesul: " + form["Proces"];
                 return RedirectToAction(nameof(Index));
             }
             catch (Exception ex)
