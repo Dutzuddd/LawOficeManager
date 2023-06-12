@@ -1,0 +1,59 @@
+﻿@model IEnumerable<LicentaSfranciog.Models.Factura>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Facturi</h1>
+
+@if (ViewData["Alert"] != null)
+{
+    <h3>@ViewData["Alert"]</h3>
+}
+
+<p>
+    <a class="btn btn-primary" asp-action="Create">Adăugare Factură Nouă</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Pret)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Data)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Proces)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Client)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pret)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Data)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Proces.Nume)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Client.Nume)
+            </td>
+            <td>
+                <a class="btn btn-secondary" asp-action="Edit" asp-route-id="@item.Id">Editare</a> |
+                <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id">Informaţii</a> |
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Şterge</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

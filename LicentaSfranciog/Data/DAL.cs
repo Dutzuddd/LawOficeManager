@@ -48,6 +48,15 @@ namespace LicentaSfranciog.Data
         public void CreateSesiune(IFormCollection form);
         public void UpdateSesiune(IFormCollection form);
         public void DeleteSesiune(int id);
+        
+        //Factura DAL methods
+        public List<Factura> GetFacturi();
+        public List<Factura> GetFacturiByProces(int procesId);
+        public Factura GetFactura(int id);
+        public void CreateFactura(IFormCollection form);
+        public void UpdateFactura(IFormCollection form);
+        public void DeleteFactura(int id);
+
     }
     public class DAL : IDAL
     {
@@ -246,6 +255,47 @@ namespace LicentaSfranciog.Data
         {
             var sesiune = db.SeiuniDosar.Find(id);
             db.SeiuniDosar.Remove(sesiune);
+            db.SaveChanges();
+        }
+
+        //Factura methods implementation
+        public List<Factura> GetFacturi()
+        {
+            return db.Facturi.ToList();
+        }
+        public List<Factura> GetFacturiByProces(int procesId)
+        {
+            return db.Facturi.Where(x => x.Proces.Id == procesId).ToList();
+        }
+        public Factura GetFactura(int id)
+        {
+            return db.Facturi.FirstOrDefault(x => x.Id == id);
+        }
+        public void CreateFactura(IFormCollection form)
+        {
+            var numeproces = form["Proces"].ToString();
+            var numeclient = form["Client"].ToString();
+            var newFactura = new Factura(form, db.Proces.FirstOrDefault(x => x.Nume == numeproces),
+                db.Client.FirstOrDefault(x => x.Nume == numeclient));
+            db.Facturi.Add(newFactura);
+            db.SaveChanges();
+        }
+        public void UpdateFactura(IFormCollection form)
+        {
+            var facturaId = int.Parse(form["Factura.Id"]);
+            var numeproces = form["Proces"].ToString();
+            var numeclient = form["Client"].ToString();
+            var myFactura = db.Facturi.FirstOrDefault(x => x.Id == facturaId);
+            var myproces = db.Proces.FirstOrDefault(x => x.Nume == numeproces);
+            var myclient = db.Client.FirstOrDefault(x => x.Nume == numeclient);
+            myFactura.UpdateFactura(form, myproces, myclient);
+            db.Entry<Factura>(myFactura).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+            db.SaveChanges();
+        }
+        public void DeleteFactura(int id)
+        {
+            var FacturaMea = db.Facturi.Find(id);
+            db.Facturi.Remove(FacturaMea);
             db.SaveChanges();
         }
     }

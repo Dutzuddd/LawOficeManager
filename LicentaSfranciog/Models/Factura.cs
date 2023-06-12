@@ -22,5 +22,20 @@ namespace LicentaSfranciog.Models
         public virtual Proces Proces { get; set; }
 
         public Factura () { }
+
+        public Factura(IFormCollection form, Proces proces, Client client) 
+        {
+            Pret = decimal.Parse(form["Factura.Pret"].ToString());
+            Data = DateTime.Parse(form["Factura.Data"].ToString());
+            Proces = proces;
+            Client = client;
+        }
+        public void UpdateFactura(IFormCollection form, Proces proces, Client client)
+        {
+            Pret = decimal.Parse(form["Factura.Pret"].ToString());
+            Data = DateTime.Parse(form["Factura.Data"].ToString());
+            Proces = proces;
+            Client = client;
+        }
     }
 }

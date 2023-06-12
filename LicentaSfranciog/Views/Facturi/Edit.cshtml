@@ -1,0 +1,87 @@
+﻿@model LicentaSfranciog.Models.ViewModels.FacturaViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Editare Date Factură</h1>
+
+<h4>Factura</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Factura.Id" />
+            <div class="form-group">
+                <label asp-for="Factura.Pret" class="control-label"></label>
+                <input asp-for="Factura.Pret" class="form-control" />
+                <span asp-validation-for="Factura.Pret" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Factura.Data" class="control-label"></label>
+                <input asp-for="Factura.Data" class="form-control" />
+                <span asp-validation-for="Factura.Data" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label>Proces</label>
+                @Html.DropDownList("Proces",Model.Proces , "Selectează un Proces", new {@class="form-control"})
+            </div>
+            <br />
+            <div class="form-group">
+                <label>Client</label>
+                @Html.DropDownList("Client",Model.Client , "Selectează un Client", new {@class="form-control"})
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Salvare" class="btn btn-primary" />
+                <a class="btn btn-outline-success" asp-action="Index">Înapoi la Facturi</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    function SetSelectedProces(Proces) {
+        var procese = document.getElementById('Proces'), proces, i;
+
+        for (i = 0; i < procese.length; i++) {
+            proces = procese[i];
+            if (loc.innerText == proces) {
+                proces.selected = "true";
+            }
+        }
+    }
+
+    var facturaProces = '@Html.Raw(Model.Proces)';
+
+    document.addEventListener('DOMContentLoaded', function () {
+        SetSelectedProces(facturaProces);
+    });
+
+</script>
+
+<script>
+    function SetSelectedClient(Client) {
+        var clienti = document.getElementById('Proces'), client, i;
+
+        for (i = 0; i < clienti.length; i++) {
+            client = clienti[i];
+            if (loc.innerText == client) {
+                client.selected = "true";
+            }
+        }
+    }
+
+    var facturaClient = '@Html.Raw(Model.Client)';
+
+    document.addEventListener('DOMContentLoaded', function () {
+        SetSelectedClient(facturaClient);
+    });
+
+</script>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
