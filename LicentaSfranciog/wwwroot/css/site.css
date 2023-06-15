@@ -15,5 +15,11 @@ html {
 
 body {
     margin-bottom: 60px;
-    background-image: url('../images/courtroom2.jpg');
+    
+    /*background-image: url('../images/wallpaperflare.com_wallpaper.jpg');
+    height: 100%;*/
+    /* Center and scale the image nicely */
+    /*background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;*/
 }

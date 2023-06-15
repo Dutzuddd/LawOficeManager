@@ -25,8 +25,12 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\vlads\\Desktop\\workigOn\\NOW\\LicentaSfranciog\\LicentaSfranciog\\wwwroot\\images\\courtroom2.jpg",
-      "PackagePath": "staticwebassets\\images\\courtroom2.jpg"
+      "Id": "C:\\Users\\vlads\\Desktop\\workigOn\\NOW\\LicentaSfranciog\\LicentaSfranciog\\wwwroot\\images\\backgr4.jpg",
+      "PackagePath": "staticwebassets\\images\\backgr4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\vlads\\Desktop\\workigOn\\NOW\\LicentaSfranciog\\LicentaSfranciog\\wwwroot\\images\\wallpaperflare.com_wallpaper.jpg",
+      "PackagePath": "staticwebassets\\images\\wallpaperflare.com_wallpaper.jpg"
     },
     {
       "Id": "C:\\Users\\vlads\\Desktop\\workigOn\\NOW\\LicentaSfranciog\\LicentaSfranciog\\wwwroot\\js\\main.js",

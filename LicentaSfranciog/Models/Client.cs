@@ -18,9 +18,13 @@ namespace LicentaSfranciog.Models
         [Required]
         public string CNPorCUI { get; set; }
         [Required]
+        [StringLength(10)]
+        [RegularExpression("^[0-9]*$", ErrorMessage = "Telefonul trebuie să conțină doar cifre.")]
         public string Telefon { get; set; }
         [Required]
+        [StringLength(50)]
         public string Adresa { get; set; }
+        [StringLength(50)]
         public string Email { get; set; }
 
         public Client(IFormCollection form)

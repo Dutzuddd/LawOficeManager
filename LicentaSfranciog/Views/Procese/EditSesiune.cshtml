@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Edit</h1>
+<h1>Editare date</h1>
 
 <h4>SesiuneLucru</h4>
 <hr />
@@ -33,16 +33,16 @@
                 <label>Proces</label>
                 @Html.DropDownList("Proces",Model.Proces , "Selectează un Proces", new {@class="form-control"})
             </div>
+            <br />
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Salvează" class="btn btn-primary" />
+                <a class="btn btn-outline-success" asp-action="Index">Înapoi la Procese</a>
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to Procese</a>
-</div>
+
 
 @section Scripts {
     @{

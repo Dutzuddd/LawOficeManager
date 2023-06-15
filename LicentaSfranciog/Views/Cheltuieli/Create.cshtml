@@ -1,0 +1,52 @@
+﻿@model LicentaSfranciog.Models.ViewModels.CheltuialaViewModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>Cheltuiala</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Cheltuiala.Titlu" class="control-label"></label>
+                <input asp-for="Cheltuiala.Titlu" class="form-control" />
+                <span asp-validation-for="Cheltuiala.Titlu" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cheltuiala.Persoana" class="control-label"></label>
+                <input asp-for="Cheltuiala.Persoana" class="form-control" />
+                <span asp-validation-for="Cheltuiala.Persoana" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cheltuiala.Data" class="control-label"></label>
+                <input asp-for="Cheltuiala.Data" class="form-control" />
+                <span asp-validation-for="Cheltuiala.Data" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cheltuiala.Suma" class="control-label"></label>
+                <input asp-for="Cheltuiala.Suma" class="form-control" />
+                <span asp-validation-for="Cheltuiala.Suma" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label>Proces</label>
+                @Html.DropDownList("Proces",Model.Proces , "Selectează un Proces", new {@class="form-control"})
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Salvează" class="btn btn-primary" />
+                <a class="btn btn-outline-success" asp-area="" asp-controller="Procese" asp-action="Index">Inapoi la Procese</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

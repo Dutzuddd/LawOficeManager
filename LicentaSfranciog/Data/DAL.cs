@@ -63,6 +63,13 @@ namespace LicentaSfranciog.Data
         public void CreateContact(Contact contact);        
         public void DeleteContact(int id);
 
+        //Cheltuieli Data Access Layer methods
+        public List<Cheltuiala> GetCheltuieliProces(int procesId);
+        public Cheltuiala GetCheltuiala(int id);
+        public void CreateCheltuiala(IFormCollection form);
+        public void UpdateCheltuiala(IFormCollection form);
+        public void DeleteCheltuiala(int id);
+
     }
     public class DAL : IDAL
     {
@@ -323,6 +330,39 @@ namespace LicentaSfranciog.Data
         {
             var myContact = db.Contact.Find(id);
             db.Contact.Remove(myContact);
+            db.SaveChanges();
+        }
+
+        //Cheltuieli dal methods implementation
+        public List<Cheltuiala> GetCheltuieliProces(int procesId) 
+        {
+            return db.Cheltuieli.Where(x => x.Proces.Id == procesId).ToList();
+        }
+        public Cheltuiala GetCheltuiala(int id)
+        {
+            return db.Cheltuieli.FirstOrDefault(x => x.Id == id);
+        }
+        public void CreateCheltuiala(IFormCollection form)
+        {
+            var numeproces = form["Proces"].ToString();
+            var newCheltuiala = new Cheltuiala(form, db.Proces.FirstOrDefault(x => x.Nume == numeproces));
+            db.Cheltuieli.Add(newCheltuiala);
+            db.SaveChanges();
+        }
+        public void UpdateCheltuiala(IFormCollection form)
+        {
+            var cheltuialaId = int.Parse(form["Cheltuiala.Id"]);
+            var numeproces = form["Proces"].ToString();
+            var cheltuialaMea = db.Cheltuieli.FirstOrDefault(x => x.Id == cheltuialaId);
+            var ProcesCheltuiala = db.Proces.FirstOrDefault(x => x.Nume == numeproces);
+            cheltuialaMea.UpdateCheltuiala(form, ProcesCheltuiala);
+            db.Entry<Cheltuiala>(cheltuialaMea).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+            db.SaveChanges();
+        }
+        public void DeleteCheltuiala(int id)
+        {
+            var cheltuiala = db.Cheltuieli.Find(id);
+            db.Cheltuieli.Remove(cheltuiala);
             db.SaveChanges();
         }
     }

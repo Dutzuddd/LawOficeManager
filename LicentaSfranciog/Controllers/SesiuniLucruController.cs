@@ -66,7 +66,7 @@ namespace LicentaSfranciog.Controllers
             {
                 _idal.CreateSesiune(form);
                 TempData["Alert"] = "Succes! Sesiune introdusă pentru procesul: " + form["Proces"];
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Procese");
             }
             catch (Exception ex)
             {
@@ -103,7 +103,7 @@ namespace LicentaSfranciog.Controllers
             {
                 _idal.UpdateSesiune(form);
                 TempData["Alert"] = "Succes! Date modificate pentru sesiunea de lucru!: "; /*+ form["Eveniment.Nume"];*/
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Index", "Procese");
             }
             catch (Exception ex)
             {
@@ -137,12 +137,8 @@ namespace LicentaSfranciog.Controllers
         {
             _idal.DeleteSesiune(id);
             TempData["Alert"] = "Sesiunea de Lucru ştearsă!";
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction("Index", "Procese"); ;
         }
 
-        //private bool SesiuneLucruExists(int id)
-        //{
-        //  return (_context.SeiuniDosar?.Any(e => e.Id == id)).GetValueOrDefault();
-        //}
     }
 }

@@ -86,6 +86,38 @@ namespace LicentaSfranciog.Migrations.ApplicationDb
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
+            modelBuilder.Entity("LicentaSfranciog.Models.Cheltuiala", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("Data")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Persoana")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ProcesId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("Suma")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("Titlu")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProcesId");
+
+                    b.ToTable("Cheltuieli");
+                });
+
             modelBuilder.Entity("LicentaSfranciog.Models.Client", b =>
                 {
                     b.Property<int>("Id")
@@ -96,7 +128,8 @@ namespace LicentaSfranciog.Migrations.ApplicationDb
 
                     b.Property<string>("Adresa")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("CNPorCUI")
                         .IsRequired()
@@ -104,7 +137,8 @@ namespace LicentaSfranciog.Migrations.ApplicationDb
 
                     b.Property<string>("Email")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Nume")
                         .IsRequired()
@@ -118,7 +152,8 @@ namespace LicentaSfranciog.Migrations.ApplicationDb
 
                     b.Property<string>("Telefon")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)");
 
                     b.Property<string>("Tip")
                         .IsRequired()
@@ -497,6 +532,17 @@ namespace LicentaSfranciog.Migrations.ApplicationDb
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens", (string)null);
+                });
+
+            modelBuilder.Entity("LicentaSfranciog.Models.Cheltuiala", b =>
+                {
+                    b.HasOne("LicentaSfranciog.Models.Proces", "Proces")
+                        .WithMany()
+                        .HasForeignKey("ProcesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Proces");
                 });
 
             modelBuilder.Entity("LicentaSfranciog.Models.Eveniment", b =>

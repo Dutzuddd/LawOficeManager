@@ -1,0 +1,50 @@
+﻿@model LicentaSfranciog.Models.Cheltuiala
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Cheltuiala</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Titlu)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Titlu)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Persoana)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Persoana)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Data)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Data)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Suma)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Suma)
+        </dd>
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Proces)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Proces.Nume)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="btn btn-primary" asp-action="Edit" asp-route-id="@Model?.Id">Editare</a> |
+    <a class="btn btn-outline-success" asp-area="" asp-controller="Procese" asp-action="Index">Inapoi la Procese</a>
+</div>
