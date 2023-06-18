@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Oz95MdsG7m1qepwVCodvETgTGjMxSQa+f8uwAHqYvfd90lt2TKhCrtIJu/AZalk7Q3I42qd434NNbZ9R+koPZw==",
+  "dgSpecHash": "ihBbwzZfjsS5cpezwfIHz4WMx+WCyflzs2UZUVmuOuFzXGgyaiRsCJqsnTBnr5HNrNMdtfXXBnQ2whmDxx2UPQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\vlads\\Desktop\\workigOn\\NOW\\LicentaSfranciog\\LicentaSfranciog\\LicentaSfranciog.csproj",
+  "projectFilePath": "C:\\Users\\vlads\\Desktop\\LicentaSfranciog\\LicentaSfranciog\\LicentaSfranciog.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\vlads\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",
     "C:\\Users\\vlads\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",

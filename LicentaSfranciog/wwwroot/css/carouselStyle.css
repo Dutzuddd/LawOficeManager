@@ -1,0 +1,10 @@
+﻿.c-item {
+    height: 480px;
+}
+
+.c-img {
+   /* height: 100%;*/
+    object-fit: cover;
+    max-width: 100%;
+    max-height: 110%;
+}

@@ -2,7 +2,52 @@
     ViewData["Title"] = "Home Page";
 }
 
+<link href="~/css/carouselStyle.css" rel="stylesheet" type="text/css" />
+
 <div class="text-center">
-    <h1 class="display-4">Popescu şi Asociaţii</h1>
-    <p>In development.</p>
+    <h2 class="display-5" style="color:cadetblue" >Bine aţi venit la Popescu şi Asociaţii</h2>   
+</div>
+
+<div id="HomeCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#HomeCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#HomeCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#HomeCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active c-item">
+            <img src="~/images/HomeImages/img4.jpg" class="d-block w-100 c-img" alt="Slide 1">
+            <div class="carousel-caption top-0 mt-4 d-none d-md-block">
+                <h2 class="display-6 fw-bolder text-capitalize" style="color:darkslategray">Societate de Avocatură din Timisoara</h2>
+                <p class=" fs-6 " style="color:cadetblue">Oferim servicii juridice profesioniste, clienţii noştri pot confirma.</p>
+            </div>
+        </div>
+
+        <div class="carousel-item c-item">
+            <img src="~/images/HomeImages/img2.jpg" class="d-block w-100 c-img" alt="Slide 2">
+            <div class="carousel-caption d-none d-md-block">
+                <h2 style="color:darkslategray">Portofoliu Amplu</h2>
+                <p class=" fs-5" style="color:darkslategray">Portofoliul nostru cuprinde peste 300 de clienţi, dintre care o parte internaţionali.</p>
+            </div>
+        </div>
+        
+        <div class="carousel-item c-item">
+            <img src="~/images/HomeImages/img3.jpg" class="d-block w-100 c-img" alt="Slide 3">
+            <div class="carousel-caption top-0 d-none d-md-block">
+                <h2 class="display-6 fw-bolder text-capitalize" style="color:cadetblue">Consiliere Rapidă:</h2>
+                <p class=" fs-4" style="color:black">
+                    Apeleaţi la cel mai eficient mijloc de consultare al unui avocat şi lăsaţi-ne un mesaj in secţiunea
+                    Contact şi veţi beneficia de răspunsuri clare, rapide şi profesioniste la problemele dumneavoastră
+                    de natură juridică.</p>
+            </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#HomeCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#HomeCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
 </div>
