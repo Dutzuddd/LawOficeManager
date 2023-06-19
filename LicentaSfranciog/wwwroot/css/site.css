@@ -16,10 +16,16 @@ html {
 body {
     margin-bottom: 60px;
     background-color: #e8e7e2;
-    /*background-image: url('../images/wallpaperflare.com_wallpaper.jpg');
-    height: 100%;*/
-    /* Center and scale the image nicely */
-    /*background-position: center;
+   
+    background-image: url('../images/beatriz-perez-moya-xn4t2pvuugk-unsplash.jpg');
+    height: 100%;
+    Center and scale the image nicely background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;*/
+    background-size: cover;
+}
+
+@media print {
+    .no-print {
+        display: none;
+    }
 }

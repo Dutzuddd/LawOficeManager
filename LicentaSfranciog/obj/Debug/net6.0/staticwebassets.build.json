@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "YewtP7OKiRQoZRTlVnUExG6Fk1ueHgCiyoaCwWCEWzw=",
+  "Hash": "oVQyx2WNdTzTjpLJmt0PqWEJCngTohqY2iCvXvfE/30=",
   "Source": "LicentaSfranciog",
   "BasePath": "_content/LicentaSfranciog",
   "Mode": "Default",
@@ -1156,6 +1156,23 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
+      "Identity": "C:\\Users\\vlads\\Desktop\\LicentaSfranciog\\LicentaSfranciog\\wwwroot\\css\\tableStyle.css",
+      "SourceId": "LicentaSfranciog",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\vlads\\Desktop\\LicentaSfranciog\\LicentaSfranciog\\wwwroot\\",
+      "BasePath": "_content/LicentaSfranciog",
+      "RelativePath": "css/tableStyle.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\tableStyle.css"
+    },
+    {
       "Identity": "C:\\Users\\vlads\\Desktop\\LicentaSfranciog\\LicentaSfranciog\\wwwroot\\favicon.ico",
       "SourceId": "LicentaSfranciog",
       "SourceType": "Discovered",
@@ -1188,6 +1205,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\backgr4.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\vlads\\Desktop\\LicentaSfranciog\\LicentaSfranciog\\wwwroot\\images\\beatriz-perez-moya-XN4T2PVUUgk-unsplash.jpg",
+      "SourceId": "LicentaSfranciog",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\vlads\\Desktop\\LicentaSfranciog\\LicentaSfranciog\\wwwroot\\",
+      "BasePath": "_content/LicentaSfranciog",
+      "RelativePath": "images/beatriz-perez-moya-XN4T2PVUUgk-unsplash.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\beatriz-perez-moya-XN4T2PVUUgk-unsplash.jpg"
     },
     {
       "Identity": "C:\\Users\\vlads\\Desktop\\LicentaSfranciog\\LicentaSfranciog\\wwwroot\\images\\HomeImages\\img2.jpg",

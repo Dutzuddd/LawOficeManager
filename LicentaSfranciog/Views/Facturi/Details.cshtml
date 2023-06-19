@@ -5,10 +5,10 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Informaţii</h1>
+<h1>Cabinet de Avocatură Popescu şi Asociaţii</h1>
 
 <div>
-    <h4>Factura</h4>
+    <h4>Factură</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -38,6 +38,7 @@
     </dl>
 </div>
 <div>
-    <a class="btn btn-primary" asp-action="Edit" asp-route-id="@Model?.Id">Editare</a> |
-    <a class="btn btn-outline-success" asp-action="Index">Înapoi la Facturi</a>
+    <a class="btn btn-primary no-print" asp-action="Edit" asp-route-id="@Model?.Id">Editare</a> |
+    <a class="btn btn-outline-success no-print" asp-action="Index">Înapoi la Facturi</a>
+    <button class="btn btn-warning no-print" onclick="window.print()"><i class="bi bi-printer-fill"></i>Imprimare</button>
 </div>

@@ -5,6 +5,8 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<link href="~/css/tableStyle.css" rel="stylesheet" type="text/css" />
+
 <h1>Termenele Cabinetului de Avocatura</h1>
 
 @if (ViewData["Alert"] != null)
@@ -15,7 +17,7 @@
 <p>
     <a class="btn btn-primary" asp-action="Create">Adăugare Termen Nou</a>
 </p>
-<table class="table">
+<table class="table" style="background-color: #D6EEEE">
     <thead>
         <tr>
             <th>

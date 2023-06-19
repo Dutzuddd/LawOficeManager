@@ -70,6 +70,13 @@ namespace LicentaSfranciog.Data
         public void UpdateCheltuiala(IFormCollection form);
         public void DeleteCheltuiala(int id);
 
+        //Rapoarte DAL
+        public List<Raport> GetRapoarte();
+        public List<Raport> GetRaportByProces(int procesId);
+        public Raport GetRaport(int id);
+        public void CreateRaport(IFormCollection form);       
+        public void DeleteRaport(int id);
+
     }
     public class DAL : IDAL
     {
@@ -363,6 +370,32 @@ namespace LicentaSfranciog.Data
         {
             var cheltuiala = db.Cheltuieli.Find(id);
             db.Cheltuieli.Remove(cheltuiala);
+            db.SaveChanges();
+        }
+
+        public List<Raport> GetRapoarte()
+        {
+            return db.Rapoarte.ToList();
+        }
+        public List<Raport> GetRaportByProces(int procesId)
+        {
+            return db.Rapoarte.Where(x => x.Proces.Id == procesId).ToList();
+        }
+        public Raport GetRaport(int id)
+        {
+            return db.Rapoarte.FirstOrDefault(x => x.Id == id);
+        }
+        public void CreateRaport(IFormCollection form)
+        {
+            var numeproces = form["Proces"].ToString();            
+            var newRaport = new Raport( db.Proces.FirstOrDefault(x => x.Nume == numeproces));
+            db.Rapoarte.Add(newRaport);
+            db.SaveChanges();
+        }
+        public void DeleteRaport(int id)
+        {
+            var myraport = db.Rapoarte.Find(id);
+            db.Rapoarte.Remove(myraport);
             db.SaveChanges();
         }
     }

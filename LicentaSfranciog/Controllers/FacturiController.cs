@@ -138,10 +138,6 @@ namespace LicentaSfranciog.Controllers
             TempData["Alert"] = "Succes!Factură ştearsă!";
             return RedirectToAction(nameof(Index));
         }
-
-        //private bool FacturaExists(int id)
-        //{
-        //  return (_context.Facturi?.Any(e => e.Id == id)).GetValueOrDefault();
-        //}
+        
     }
 }

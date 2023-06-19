@@ -70,12 +70,12 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Client.Nume)
             </td>
-            <td>
+                    <td class="text-center">
                 <a class="btn btn-secondary" asp-action="Edit" asp-route-id="@item.Id">Editare</a> |
                 <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id">Informaţii</a> |
                 <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Ştergere</a> |
                 <a class="btn btn-info" asp-action="SesiuniLucrate" asp-route-id="@item.Id">Ore Lucrate</a>
-                <a class="btn btn-warning" asp-area="" asp-controller="Cheltuieli" asp-action="Index" asp-route-id="@item.Id">Cheltuieli</a>
+                        <a class="btn btn-warning mt-2" asp-area="" asp-controller="Cheltuieli" asp-action="Index" asp-route-id="@item.Id">Cheltuieli</a>
             </td>
         </tr>
     }

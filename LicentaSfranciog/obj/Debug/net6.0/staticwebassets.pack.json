@@ -25,6 +25,10 @@
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
+      "Id": "C:\\Users\\vlads\\Desktop\\LicentaSfranciog\\LicentaSfranciog\\wwwroot\\css\\tableStyle.css",
+      "PackagePath": "staticwebassets\\css\\tableStyle.css"
+    },
+    {
       "Id": "C:\\Users\\vlads\\Desktop\\LicentaSfranciog\\LicentaSfranciog\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
@@ -43,6 +47,10 @@
     {
       "Id": "C:\\Users\\vlads\\Desktop\\LicentaSfranciog\\LicentaSfranciog\\wwwroot\\images\\backgr4.jpg",
       "PackagePath": "staticwebassets\\images\\backgr4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\vlads\\Desktop\\LicentaSfranciog\\LicentaSfranciog\\wwwroot\\images\\beatriz-perez-moya-XN4T2PVUUgk-unsplash.jpg",
+      "PackagePath": "staticwebassets\\images\\beatriz-perez-moya-XN4T2PVUUgk-unsplash.jpg"
     },
     {
       "Id": "C:\\Users\\vlads\\Desktop\\LicentaSfranciog\\LicentaSfranciog\\wwwroot\\images\\wallpaperflare.com_wallpaper.jpg",

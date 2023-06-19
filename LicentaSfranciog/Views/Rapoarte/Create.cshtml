@@ -1,0 +1,55 @@
+﻿@model LicentaSfranciog.Models.ViewModels.RaportViewModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>Raport</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+           
+            <div class="form-group">
+                <label asp-for="Raport.OreLucrate" class="control-label"></label>
+                <input asp-for="Raport.OreLucrate" class="form-control" />
+                <span asp-validation-for="Raport.OreLucrate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Raport.Facturat" class="control-label"></label>
+                <input asp-for="Raport.Facturat" class="form-control" />
+                <span asp-validation-for="Raport.Facturat" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Raport.Cheltuieli" class="control-label"></label>
+                <input asp-for="Raport.Cheltuieli" class="form-control" />
+                <span asp-validation-for="Raport.Cheltuieli" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Raport.DataRaport" class="control-label"></label>
+                <input asp-for="Raport.DataRaport" class="form-control" />
+                <span asp-validation-for="Raport.DataRaport" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label>Proces</label>
+                @Html.DropDownList("Proces",Model.Proces , "Selectează un Proces", new {@class="form-control"})
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
