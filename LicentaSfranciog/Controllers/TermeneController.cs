@@ -9,9 +9,11 @@ using LicentaSfranciog.Models;
 using LicentaSfranciog.Data;
 using LicentaSfranciog.Models.ViewModels;
 using System.Diagnostics;
+using Microsoft.AspNetCore.Authorization;
 
 namespace LicentaSfranciog.Controllers
 {
+    [Authorize]
     public class TermeneController : Controller
     {
         //private readonly ApplicationDbContext _context;

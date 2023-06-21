@@ -8,9 +8,11 @@ using Microsoft.EntityFrameworkCore;
 using LicentaSfranciog.Models;
 using LicentaSfranciog.Data;
 using LicentaSfranciog.Models.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 
 namespace LicentaSfranciog.Controllers
 {
+    [Authorize]
     public class ProceseController : Controller
     {        
         private readonly IDAL _idal;
@@ -250,18 +252,5 @@ namespace LicentaSfranciog.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        //redirect
-        //public IActionResult RedirectToSesiuneEdit(int id)
-        //{
-        //    return Redirect("~/SesiuniLucru/Edit/" + id);
-        //}
-        //public IActionResult RedirectToSesiuneDetails(int id)
-        //{
-        //    return Redirect("~/SesiuniLucru/Details/" + id);
-        //}
-        //public IActionResult RedirectToSesiuneDelete(int id)
-        //{
-        //    return Redirect("~/SesiuniLucru/Details/" + id);
-        //}
     }
 }

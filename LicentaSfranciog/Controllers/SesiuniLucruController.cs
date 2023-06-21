@@ -9,9 +9,11 @@ using LicentaSfranciog.Models;
 using LicentaSfranciog.Data;
 using LicentaSfranciog.Models.ViewModels;
 using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Authorization;
 
 namespace LicentaSfranciog.Controllers
 {
+    [Authorize]
     public class SesiuniLucruController : Controller
     {
        // private readonly ApplicationDbContext _context;

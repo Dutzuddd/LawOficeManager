@@ -8,9 +8,11 @@ using Microsoft.EntityFrameworkCore;
 using LicentaSfranciog.Models;
 using LicentaSfranciog.Data;
 using LicentaSfranciog.Models.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 
 namespace LicentaSfranciog.Controllers
 {
+    [Authorize]
     public class FacturiController : Controller
     {
         //private readonly ApplicationDbContext _context;
