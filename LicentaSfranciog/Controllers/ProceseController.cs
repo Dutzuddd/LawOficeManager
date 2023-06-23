@@ -23,13 +23,20 @@ namespace LicentaSfranciog.Controllers
         }
 
         // GET: Procese
-        public IActionResult Index()
+        public IActionResult Index(string searchString)
         {
+            var model = _idal.GetProcese().ToList();
             if (TempData["Alert"] != null)
             {
                 ViewData["Alert"] = TempData["Alert"];
             }
-            return View(_idal.GetProcese());
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                // Aplică filtrarea în funcție de necesități
+                model = model.Where(p => p.Nume.IndexOf(searchString, StringComparison.OrdinalIgnoreCase) >= 0 || p.Partile.IndexOf(searchString, StringComparison.OrdinalIgnoreCase) >= 0).ToList();
+            }
+
+            return View(model);
         }
 
         // GET: Procese/Details/5

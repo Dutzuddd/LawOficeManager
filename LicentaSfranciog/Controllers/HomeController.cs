@@ -1,6 +1,7 @@
 ﻿using LicentaSfranciog.Data;
 using LicentaSfranciog.Helpers;
 using LicentaSfranciog.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -21,7 +22,7 @@ namespace LicentaSfranciog.Controllers
         {
             return View();
         }
-
+        [Authorize]
         public IActionResult Privacy()
         {
             

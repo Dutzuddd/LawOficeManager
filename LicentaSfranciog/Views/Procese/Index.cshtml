@@ -16,7 +16,13 @@
 <p>
     <a class="btn btn-primary" asp-action="Create">Adăugare Proces Nou</a>&nbsp;
     <a class="btn btn-warning" asp-area="" asp-controller="Facturi" asp-action="Index">Facturare</a>
+    <form method="get" action="@Url.Action("Index")">
+        <input  type="text" name="searchString" placeholder="Caută...">
+        <button class="btn btn-info my-2 my-sm-0" type="submit">Caută</button>
+    </form>
 </p>
+
+
 <table class="table">
     <thead>
         <tr>

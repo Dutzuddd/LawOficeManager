@@ -67,7 +67,7 @@ namespace LicentaSfranciog.Controllers
             {
                 _dal.CreateEveniment(form);
                 TempData["Alert"] = "Succes! Eveniment introdus: " + form["Eveniment.Nume"];
-                return RedirectToAction("Index");
+                return RedirectToAction("Privacy", "Home");
             }
             catch (Exception ex)
             {
@@ -104,7 +104,7 @@ namespace LicentaSfranciog.Controllers
             {
                 _dal.UpdateEveniment(form);
                 TempData["Alert"] = "Succes! Date modificate pentru evenimentul: " + form["Eveniment.Nume"];
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Privacy", "Home");
             }
             catch (Exception ex)
             {
